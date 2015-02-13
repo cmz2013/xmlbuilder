@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;snippet.Snippet.java&apos; to &apos;RemindDateUtils.java&apos;&#x0D;&#x0A;- Original project: &apos;time&apos;&#x0D;&#x0A;- Original element: &apos;snippet.Snippet.java&apos;&#x0D;&#x0A;- Renamed element: &apos;snippet.RemindDateUtils.java&apos;" description="Rename compilation unit &apos;Snippet.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;snippet{Snippet.java" name="RemindDateUtils.java" references="false" stamp="1423541308151" version="1.0"/>
+</session>
