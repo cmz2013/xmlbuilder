@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object_china desc="中国">
+	<longitude text_value="longitude" />
+	<latitude text_value="latitude" />
+</object_china>

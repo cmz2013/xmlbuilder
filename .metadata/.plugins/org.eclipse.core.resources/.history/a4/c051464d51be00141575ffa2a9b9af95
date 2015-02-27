@@ -1,0 +1,13 @@
+package test;
+
+public class China {
+	/*
+	 * ¾­¶È
+	 */
+	private String longitude;
+	
+	/*
+	 * Î³¶È
+	 */
+	private String latitude;
+}

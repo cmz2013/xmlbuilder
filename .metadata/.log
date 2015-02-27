@@ -1090,3 +1090,49 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.e
 
 !ENTRY jp.gr.java_conf.ussiy.app.propedit 1 0 2015-02-13 16:52:52.588
 !MESSAGE properties loading 'xmlbuilder'
+!SESSION 2015-02-27 13:18:53.239 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.7.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=zh_CN
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY jp.gr.java_conf.ussiy.app.propedit 1 0 2015-02-27 13:19:10.992
+!MESSAGE properties loading 'xmlbuilder'
+
+!ENTRY com.android.ide.eclipse.adt 1 0 2015-02-27 14:13:37.768
+!MESSAGE No valid Android XML Editor Delegate found for file /xmlbuilder/src/test/People.xml [Res null, type null]
+
+!ENTRY com.android.ide.eclipse.adt 1 0 2015-02-27 15:01:54.209
+!MESSAGE No valid Android XML Editor Delegate found for file /xmlbuilder/src/test/People.xml [Res null, type null]
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2015-02-27 15:02:38.092
+!MESSAGE No projects found for [D:\Work\opensource\xmlbuilder\xmlbuilder\src\test\People.xml]
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2015-02-27 15:03:49.152
+!MESSAGE Failed to load properties file for project 'xmlbuilder'
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2015-02-27 15:03:52.880
+!MESSAGE No projects found for [D:\Work\opensource\xmlbuilder\xmlbuilder\src\test\People.xml]
+
+!ENTRY com.android.ide.eclipse.adt 1 0 2015-02-27 15:22:18.001
+!MESSAGE No valid Android XML Editor Delegate found for file /xmlbuilder/src/test/China.xml [Res null, type null]
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2015-02-27 15:22:24.428
+!MESSAGE No projects found for [D:\Work\opensource\xmlbuilder\xmlbuilder\src\test\China.xml]
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2015-02-27 15:22:55.378
+!MESSAGE No projects found for [D:\Work\opensource\xmlbuilder\xmlbuilder\src\test\China.xml]
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2015-02-27 15:23:01.587
+!MESSAGE No projects found for [D:\Work\opensource\xmlbuilder\xmlbuilder\src\test\China.xml]
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2015-02-27 15:23:22.725
+!MESSAGE No projects found for [D:\Work\opensource\xmlbuilder\xmlbuilder\src\test\China.xml]
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2015-02-27 15:24:45.218
+!MESSAGE No projects found for [D:\Work\opensource\xmlbuilder\xmlbuilder\src\test\China.xml]
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2015-02-27 15:25:27.635
+!MESSAGE No projects found for [D:\Work\opensource\xmlbuilder\xmlbuilder\src\test\China.xml]

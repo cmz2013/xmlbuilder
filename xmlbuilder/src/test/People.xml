@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<peoples>
+<peoples country="cn">
   <object_people attribute_name="name">
 	<age text_value="age" />
 	<sex text_value="sex" />

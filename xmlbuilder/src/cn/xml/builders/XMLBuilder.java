@@ -23,32 +23,64 @@ import org.dom4j.Element;
 public class XMLBuilder {
 	
 	/**
-	 * 将数据对象转换成xml字符串
-	 * @param datas
+	 * 将数据对象转换成xml字符串，注意：PREFIX_OBJECT节点不可作为根节点
 	 * @param templet
+	 * @param datas
 	 * @return
 	 * @throws Exception
 	 */
-	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public static String build(List datas, File templet) throws Exception{
+	@SuppressWarnings({ "unchecked", "rawtypes"})
+	public static String build(File templet, Collection datas) throws Exception{
 		TempletParser parser = new TempletParser();
 		Document newDoc = DocumentHelper.createDocument();; 
 		Document templateDoc = parser.parse(templet);
 		
-		Element rootNode = templateDoc.getRootElement();
-		NodeType rootType = TempletParser.getNodeType(rootNode.getName());
+		Element tRootNode = templateDoc.getRootElement();
+		NodeType rootType = TempletParser.getNodeType(tRootNode.getName());
         
 		if (NodeType.PREFIX_OBJECT != rootType) {
-			Element newNode = cloneNode(rootNode);
-			buildChildNode(newNode, rootNode.elements(), datas);
-			newDoc.setRootElement(newNode);
+			Element nRootNode = cloneNode(tRootNode);
+			buildChildNode(nRootNode, tRootNode.elements(), datas);
+			newDoc.setRootElement(nRootNode);
 		} else {
-			throw new Exception("The root element (" + rootNode.getName(
-					) + ") name is wrong, please check " + templet.getName());
+			throw new Exception("\"" + tRootNode.getName(
+					) + "\" cannot serve as the root element, please check " + templet.getName());
 		}
-
+		
 		return newDoc.asXML();
 	}	
+	
+	/**
+	 * 将数据对象转换成xml字符串，注意：PREFIX_OBJECT节点可作为根节点
+	 * 
+	 * @param templet
+	 * @param data
+	 * @return
+	 * @throws Exception
+	 */
+	@SuppressWarnings({ "unchecked"})
+	public static String build(File templet, Object data) throws Exception{
+		TempletParser parser = new TempletParser();
+		Document newDoc = DocumentHelper.createDocument();; 
+		Document templateDoc = parser.parse(templet);
+		
+		Element tRootNode = templateDoc.getRootElement();
+		NodeType rootType = TempletParser.getNodeType(tRootNode.getName());
+		Element nRootNode = null;
+		
+		if (NodeType.PREFIX_OBJECT != rootType) {
+			nRootNode = cloneNode(tRootNode);
+			buildChildNode(nRootNode, tRootNode.elements(), data);
+		} else {
+			String objectName = tRootNode.getName().substring(7);
+			nRootNode = DocumentHelper.createElement(objectName);
+			parseObjectAttribute(nRootNode, tRootNode.attributes(), data);
+			parseObjectElement(nRootNode, tRootNode.elements(), data);
+		}
+		
+		newDoc.setRootElement(nRootNode);
+		return newDoc.asXML();
+	}
 	
 	/**
 	 * 解析elements，构建newNode的子节点
@@ -61,9 +93,9 @@ public class XMLBuilder {
 	 * @throws SecurityException 
 	 * @throws NoSuchMethodException 
 	 */
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	private static void buildChildNode(Element newNode, 
-			List<Element> elements, List<Object> datas) throws 
+			List<Element> elements, Collection  datas) throws 
 			NoSuchMethodException, SecurityException, IllegalAccessException, 
 			IllegalArgumentException, InvocationTargetException {
 		
@@ -82,6 +114,41 @@ public class XMLBuilder {
 						parseObjectAttribute(objectElement, element.attributes(), data);
 						parseObjectElement(objectElement, element.elements(), data);
 					}
+				} 
+			}
+		}
+	}
+	
+	/**
+	 * 解析elements，构建newNode的子节点
+	 * @param newNode
+	 * @param elements
+	 * @param data
+	 * @throws InvocationTargetException 
+	 * @throws IllegalArgumentException 
+	 * @throws IllegalAccessException 
+	 * @throws SecurityException 
+	 * @throws NoSuchMethodException 
+	 */
+	@SuppressWarnings({ "unchecked" })
+	private static void buildChildNode(Element newNode, 
+			List<Element> elements, Object  data) throws 
+			NoSuchMethodException, SecurityException, IllegalAccessException, 
+			IllegalArgumentException, InvocationTargetException {
+		
+		if (null != elements && elements.size() > 0) {
+			for (Element element : elements) {
+				NodeType elementType = TempletParser.getNodeType(element.getName());
+		        
+				if (NodeType.NORMAL == elementType) {
+					Element newElement = newNode.addElement(element.getName());
+					copyElement(element, newElement);
+					buildChildNode(newElement, element.elements(), data);
+				} else if (NodeType.PREFIX_OBJECT == elementType) {
+					String objectName = element.getName().substring(7);
+					Element objectElement = newNode.addElement(objectName);
+					parseObjectAttribute(objectElement, element.attributes(), data);
+					parseObjectElement(objectElement, element.elements(), data);
 				} 
 			}
 		}
@@ -198,7 +265,7 @@ public class XMLBuilder {
 		
 		ObjectAttributeResult result = new ObjectAttributeResult();
 		Object memData = null;
-		Map<String, String> attrMap = new HashMap<>();
+		Map<String, String> attrMap = new HashMap<String, String>();
 		Collection textValues = null;
 		
 		if (null != attributes && attributes.size() > 0) {

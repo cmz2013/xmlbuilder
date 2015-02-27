@@ -15,7 +15,6 @@
 <fullyQualifiedTypeName name="org.w3c.dom.Node"/>
 <fullyQualifiedTypeName name="org.w3c.dom.NodeList"/>
 <fullyQualifiedTypeName name="java.io.File"/>
-<fullyQualifiedTypeName name="org.dom4j.io.DOMReader"/>
 <fullyQualifiedTypeName name="org.dom4j.DocumentHelper"/>
 <fullyQualifiedTypeName name="cn.xml.builders.NodeType"/>
 <fullyQualifiedTypeName name="org.dom4j.Document"/>
@@ -31,6 +30,8 @@
 <fullyQualifiedTypeName name="org.dom4j.Attribute"/>
 <fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
-<fullyQualifiedTypeName name="java.util.Collection"/>
 <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+<fullyQualifiedTypeName name="java.util.Collection"/>
+<fullyQualifiedTypeName name="org.dom4j.io.DOMReader"/>
+<fullyQualifiedTypeName name="test.China"/>
 </qualifiedTypeNameHistroy>

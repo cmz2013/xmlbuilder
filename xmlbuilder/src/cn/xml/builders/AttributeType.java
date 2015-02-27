@@ -7,7 +7,16 @@ package cn.xml.builders;
  */
 public enum AttributeType {
 	NORMAL, 
+	/*
+	 * 属性名称为"text_value"
+	 */
 	TEXT_VALUE, 
+	/*
+	 * 属性名称以"attribute_"为前缀
+	 */
 	PREFIX_ATTRIBUTE, 
+	/*
+	 * 属性名称为"object_data"
+	 */
 	OBJECT_DATA
 }

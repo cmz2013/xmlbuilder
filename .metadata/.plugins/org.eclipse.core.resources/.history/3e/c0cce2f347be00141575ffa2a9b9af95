@@ -1,0 +1,16 @@
+package cn.xml.builders;
+/**
+ * 模板节点属性类型
+ * 
+ * @author Chongming
+ *
+ */
+public enum AttributeType {
+	NORMAL, 
+	/*
+	 * 属性名称为"text_value"
+	 */
+	TEXT_VALUE, 
+	PREFIX_ATTRIBUTE, 
+	OBJECT_DATA
+}

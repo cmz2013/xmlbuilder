@@ -7,12 +7,13 @@ import java.util.List;
 import cn.xml.builders.XMLBuilder;
 
 public class TestXmlBuilder {
-
+	
 	/**
-	 * @param args
-	 * @throws Exception 
+	 * @Test XMLBuilder.build(File templet, Collection datas)
+	 * @return
+	 * @throws Exception
 	 */
-	public static void main(String[] args) throws Exception {
+	public static String test1() throws Exception {
 		List<People> peoples = new ArrayList<>();
 		Address address = new Address();
 		File templet = new File(TestXmlBuilder.class.getResource("People.xml").getPath());
@@ -29,7 +30,30 @@ public class TestXmlBuilder {
 			peoples.add(people);
 		}
 		
-		System.out.println(XMLBuilder.build(peoples, templet));
+		return XMLBuilder.build(templet, peoples);
+	}
+	
+	/**
+	 * @Test XMLBuilder.build(File templet, Collection datas)
+	 * @return
+	 * @throws Exception
+	 */
+	public static String test2() throws Exception {
+		File templet = new File(TestXmlBuilder.class.getResource("China.xml").getPath());
+		China china = new China();
+		china.setLatitude("3°„51°‰N÷¡53°„33°‰N");
+		china.setLongitude("73°„33°‰E÷¡135°„05°‰E");
+		return XMLBuilder.build(templet, china);
+	}
+
+	/**
+	 * @param args
+	 * @throws Exception 
+	 */
+	public static void main(String[] args) throws Exception {
+		System.out.println(test1());
+		System.out.println("\r\n\r\n");
+		System.out.println(test2());
 	}
 
 }

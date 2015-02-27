@@ -15,14 +15,14 @@ import org.dom4j.io.SAXReader;
 public class TempletParser {
 	
 	/**
-	 * DOM解析器解析xml模板
+	 * 返回模板对应的Document实例
 	 * @param templet
 	 * @return
 	 * @throws DocumentException 
 	 */
 	public Document parse(File templet) throws DocumentException  {
-		SAXReader saxReader = new SAXReader();
-        return saxReader.read(templet);
+		SAXReader reader = new SAXReader();
+        return reader.read(templet);
 	}
 	
 	/**
