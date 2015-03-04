@@ -30,7 +30,7 @@ public class TempletParser {
 	 * @param node
 	 * @return
 	 */
-	public static NodeType getNodeType(String nodeName) {
+	public NodeType getNodeType(String nodeName) {
 		if (nodeName.startsWith("object_")) {
 			return NodeType.PREFIX_OBJECT;
 		} else if (nodeName.startsWith("memobjects_")) {
@@ -47,7 +47,7 @@ public class TempletParser {
 	 * @param attributeName
 	 * @return
 	 */
-	public static AttributeType getAttributeType(String attributeName) {
+	public AttributeType getAttributeType(String attributeName) {
 		if ("text_value".equals(attributeName)) {
 			return AttributeType.TEXT_VALUE;
 		}  else if ("object_data".equals(attributeName)) {

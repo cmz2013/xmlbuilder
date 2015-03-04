@@ -1,0 +1,5 @@
+package cn.xml.builders;
+
+public class TempletException extends Exception {
+
+}

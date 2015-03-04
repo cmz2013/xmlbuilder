@@ -11,6 +11,7 @@ import java.util.Map;
 
 import org.dom4j.Attribute;
 import org.dom4j.Document;
+import org.dom4j.DocumentException;
 import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
 
@@ -22,28 +23,39 @@ import org.dom4j.Element;
  */
 public class XMLBuilder {
 	
+	private int oni = 0;
+	
+	private TempletParser parser = new TempletParser();
+	
 	/**
-	 * 将数据对象转换成xml字符串，注意：PREFIX_OBJECT节点不可作为根节点
+	 * 将数据实例集datas转换成xml字符串，注意：PREFIX_OBJECT节点不可作为根节点
 	 * @param templet
 	 * @param datas
 	 * @return
+	 * @throws DocumentException 
+	 * @throws InvocationTargetException 
+	 * @throws IllegalArgumentException 
+	 * @throws IllegalAccessException 
+	 * @throws SecurityException 
+	 * @throws NoSuchMethodException 
+	 * @throws TempletException 
 	 * @throws Exception
 	 */
 	@SuppressWarnings({ "unchecked", "rawtypes"})
-	public static String build(File templet, Collection datas) throws Exception{
-		TempletParser parser = new TempletParser();
-		Document newDoc = DocumentHelper.createDocument();; 
+	public String build(File templet, Collection[] datas) throws DocumentException, 
+			NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, TempletException {
+		Document newDoc = DocumentHelper.createDocument();
 		Document templateDoc = parser.parse(templet);
 		
 		Element tRootNode = templateDoc.getRootElement();
-		NodeType rootType = TempletParser.getNodeType(tRootNode.getName());
+		NodeType rootType = parser.getNodeType(tRootNode.getName());
         
 		if (NodeType.PREFIX_OBJECT != rootType) {
 			Element nRootNode = cloneNode(tRootNode);
 			buildChildNode(nRootNode, tRootNode.elements(), datas);
 			newDoc.setRootElement(nRootNode);
 		} else {
-			throw new Exception("\"" + tRootNode.getName(
+			throw new TempletException("\"" + tRootNode.getName(
 					) + "\" cannot serve as the root element, please check " + templet.getName());
 		}
 		
@@ -51,7 +63,7 @@ public class XMLBuilder {
 	}	
 	
 	/**
-	 * 将数据对象转换成xml字符串，注意：PREFIX_OBJECT节点可作为根节点
+	 * 将数据对象data转换成xml字符串，注意：PREFIX_OBJECT节点可作为根节点
 	 * 
 	 * @param templet
 	 * @param data
@@ -59,13 +71,12 @@ public class XMLBuilder {
 	 * @throws Exception
 	 */
 	@SuppressWarnings({ "unchecked"})
-	public static String build(File templet, Object data) throws Exception{
-		TempletParser parser = new TempletParser();
+	public String build(File templet, Object data) throws Exception{
 		Document newDoc = DocumentHelper.createDocument();; 
 		Document templateDoc = parser.parse(templet);
 		
 		Element tRootNode = templateDoc.getRootElement();
-		NodeType rootType = TempletParser.getNodeType(tRootNode.getName());
+		NodeType rootType = parser.getNodeType(tRootNode.getName());
 		Element nRootNode = null;
 		
 		if (NodeType.PREFIX_OBJECT != rootType) {
@@ -93,27 +104,31 @@ public class XMLBuilder {
 	 * @throws SecurityException 
 	 * @throws NoSuchMethodException 
 	 */
-	@SuppressWarnings({ "unchecked", "rawtypes" })
-	private static void buildChildNode(Element newNode, 
-			List<Element> elements, Collection  datas) throws 
+	@SuppressWarnings({ "unchecked"})
+	private void buildChildNode(Element newNode, 
+			List<Element> elements, Collection<Object>[]  datas) throws
 			NoSuchMethodException, SecurityException, IllegalAccessException, 
 			IllegalArgumentException, InvocationTargetException {
 		
 		if (null != elements && elements.size() > 0) {
 			for (Element element : elements) {
-				NodeType elementType = TempletParser.getNodeType(element.getName());
+				NodeType elementType = parser.getNodeType(element.getName());
 		        
 				if (NodeType.NORMAL == elementType) {
 					Element newElement = newNode.addElement(element.getName());
 					copyElement(element, newElement);
 					buildChildNode(newElement, element.elements(), datas);
 				} else if (NodeType.PREFIX_OBJECT == elementType) {
-					String objectName = element.getName().substring(7);
-					for (Object data : datas) {
-						Element objectElement = newNode.addElement(objectName);
-						parseObjectAttribute(objectElement, element.attributes(), data);
-						parseObjectElement(objectElement, element.elements(), data);
+					if (oni < datas.length) {
+						String objectName = element.getName().substring(7);
+						for (Object data : datas[oni]) {
+							Element objectElement = newNode.addElement(objectName);
+							parseObjectAttribute(objectElement, element.attributes(), data);
+							parseObjectElement(objectElement, element.elements(), data);
+						}
+						oni++;
 					}
+					
 				} 
 			}
 		}
@@ -131,14 +146,14 @@ public class XMLBuilder {
 	 * @throws NoSuchMethodException 
 	 */
 	@SuppressWarnings({ "unchecked" })
-	private static void buildChildNode(Element newNode, 
+	private void buildChildNode(Element newNode, 
 			List<Element> elements, Object  data) throws 
 			NoSuchMethodException, SecurityException, IllegalAccessException, 
 			IllegalArgumentException, InvocationTargetException {
 		
 		if (null != elements && elements.size() > 0) {
 			for (Element element : elements) {
-				NodeType elementType = TempletParser.getNodeType(element.getName());
+				NodeType elementType = parser.getNodeType(element.getName());
 		        
 				if (NodeType.NORMAL == elementType) {
 					Element newElement = newNode.addElement(element.getName());
@@ -166,15 +181,14 @@ public class XMLBuilder {
 	 * @throws NoSuchMethodException 
 	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	private static void parseObjectElement(
+	private void parseObjectElement(
 			Element objectElement, List<Element> childElements, Object data) throws 
 			NoSuchMethodException, SecurityException, IllegalAccessException, 
 			IllegalArgumentException, InvocationTargetException {
 		
 		if (null != childElements && childElements.size() > 0) {
 			for (Element childElement : childElements) {
-				NodeType elementType = 
-						TempletParser.getNodeType(childElement.getName());
+				NodeType elementType = parser.getNodeType(childElement.getName());
 				
 				if (NodeType.PREFIX_MEMOBJECT== elementType) {
 					String memoName = childElement.getName().substring(10);
@@ -238,7 +252,7 @@ public class XMLBuilder {
 	 * @param element
 	 * @param attrMap
 	 */
-	private static void setElementAttribute(Element element, Map<String, String> attrMap) {
+	private void setElementAttribute(Element element, Map<String, String> attrMap) {
 		if (null != attrMap && attrMap.size() > 0) {
 			for (String attrName : attrMap.keySet()) {
 				element.addAttribute(attrName, attrMap.get(attrName));
@@ -258,7 +272,7 @@ public class XMLBuilder {
 	 * @throws NoSuchMethodException 
 	 */
 	@SuppressWarnings({ "rawtypes" })
-	private static ObjectAttributeResult parseMemObjectAttribute(
+	private ObjectAttributeResult parseMemObjectAttribute(
 			List<Attribute> attributes, Object data) throws NoSuchMethodException, 
 			SecurityException, IllegalAccessException, 
 			IllegalArgumentException, InvocationTargetException {
@@ -270,7 +284,7 @@ public class XMLBuilder {
 		
 		if (null != attributes && attributes.size() > 0) {
 			for (Attribute attr : attributes) {
-				AttributeType attrType = TempletParser.getAttributeType(attr.getName());
+				AttributeType attrType = parser.getAttributeType(attr.getName());
 				if (AttributeType.TEXT_VALUE == attrType) {
 					Object textValue = getAttrValue(data, attr.getValue());
 					if (null != textValue) {
@@ -318,7 +332,7 @@ public class XMLBuilder {
 	 * @throws NoSuchMethodException 
 	 */
 	@SuppressWarnings("unchecked")
-	private static Object parseMemObjectAttribute(
+	private Object parseMemObjectAttribute(
 			Element memoe, List<Attribute> attributes, Object data) throws 
 			NoSuchMethodException, SecurityException, IllegalAccessException, 
 			IllegalArgumentException, InvocationTargetException {
@@ -326,7 +340,7 @@ public class XMLBuilder {
 		Object memData = null;
 		if (null != attributes && attributes.size() > 0) {
 			for (Attribute attr : attributes) {
-				AttributeType attrType = TempletParser.getAttributeType(attr.getName());
+				AttributeType attrType = parser.getAttributeType(attr.getName());
 				if (AttributeType.TEXT_VALUE == attrType) {
 					setElementTextValue(memoe, attr, data);
 				} else if (AttributeType.PREFIX_ATTRIBUTE == attrType) {
@@ -357,14 +371,14 @@ public class XMLBuilder {
 	 * @throws SecurityException 
 	 * @throws NoSuchMethodException 
 	 */
-	private static void parseObjectAttribute(
+	private void parseObjectAttribute(
 			Element objectElement, List<Attribute> attributes, Object data) throws 
 			NoSuchMethodException, SecurityException, IllegalAccessException, 
 			IllegalArgumentException, InvocationTargetException {
 		
 		if (null != attributes && attributes.size() > 0) {
 			for (Attribute attr : attributes) {
-				AttributeType attrType = TempletParser.getAttributeType(attr.getName());
+				AttributeType attrType = parser.getAttributeType(attr.getName());
 				
 				if (AttributeType.PREFIX_ATTRIBUTE == attrType) {
 					String oattrName = attr.getName().substring(10);
@@ -391,7 +405,7 @@ public class XMLBuilder {
 	 * @throws InvocationTargetException
 	 */
 	@SuppressWarnings("rawtypes")
-	private static void setElementTextValue(Element element, 
+	private void setElementTextValue(Element element, 
 			Attribute textValueAttr, Object data) throws NoSuchMethodException, 
 			SecurityException, IllegalAccessException, 
 			IllegalArgumentException, InvocationTargetException {
@@ -418,7 +432,7 @@ public class XMLBuilder {
 	 * @param element
 	 * @param textValues
 	 */
-	private static void setElementTextValue(
+	private void setElementTextValue(
 			Element element, Object...textValues) {
 		
 		if (null != textValues && textValues.length > 0) {
@@ -446,7 +460,7 @@ public class XMLBuilder {
 	 * @throws InvocationTargetException
 	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
-	private static Object getAttrValue(Object data, String field) throws 
+	private Object getAttrValue(Object data, String field) throws 
 			NoSuchMethodException, SecurityException, IllegalAccessException, 
 			IllegalArgumentException, InvocationTargetException {
 		
@@ -468,7 +482,7 @@ public class XMLBuilder {
 	 * @param rootNode
 	 * @return
 	 */
-	private static void copyElement(Element element, Element newElement) {
+	private void copyElement(Element element, Element newElement) {
 		String text = element.getTextTrim();
 		if (null != text && !"".equals(text)) {
 			newElement.setText(text);
@@ -482,7 +496,7 @@ public class XMLBuilder {
 	 * @param newElement
 	 */
 	@SuppressWarnings("unchecked")
-	private static void copyElementArrt(Element element, Element newElement) {
+	private void copyElementArrt(Element element, Element newElement) {
 		List<Attribute> attrs = element.attributes();
 		if (null != attrs && attrs.size() > 0) {
 			newElement.setAttributes(attrs);
@@ -494,7 +508,7 @@ public class XMLBuilder {
 	 * @param rootNode
 	 * @return
 	 */
-	private static Element cloneNode(Element tnode) {
+	private Element cloneNode(Element tnode) {
 		Element newNode = DocumentHelper.createElement(tnode.getName());
 		copyElement(tnode, newNode);
 		return newNode;

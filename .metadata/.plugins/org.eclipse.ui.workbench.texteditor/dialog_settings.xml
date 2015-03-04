@@ -13,18 +13,20 @@
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="buildChildNode" key="selection"/>
+		<item value="throw" key="selection"/>
 		<list key="findhistory">
+			<item value="throw"/>
+			<item value="TempletParser"/>
+			<item value=" static"/>
+			<item value="..."/>
+			<item value="static"/>
 			<item value="buildChildNode"/>
 			<item value="PREFIX_ATTRIBUTE"/>
 			<item value="xmlbuilder"/>
-			<item value="parseMemObjectAttribute"/>
-			<item value="getAttrValue"/>
-			<item value="setElementAttribute"/>
-			<item value="parseObjectElement"/>
-			<item value="childElement"/>
 		</list>
 		<list key="replacehistory">
+			<item value="parser"/>
+			<item value=""/>
 			<item value="memobject"/>
 			<item value="sonobject"/>
 		</list>

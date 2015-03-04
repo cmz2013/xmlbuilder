@@ -2,17 +2,21 @@ package test;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import cn.xml.builders.XMLBuilder;
 
 public class TestXmlBuilder {
 	
+	private static XMLBuilder xmlBuilder = new XMLBuilder();
+	
 	/**
 	 * @Test XMLBuilder.build(File templet, Collection datas)
 	 * @return
 	 * @throws Exception
 	 */
+	@SuppressWarnings({"rawtypes" })
 	public static String test1() throws Exception {
 		List<People> peoples = new ArrayList<>();
 		Address address = new Address();
@@ -29,8 +33,8 @@ public class TestXmlBuilder {
 			people.setAddress(address);
 			peoples.add(people);
 		}
-		
-		return XMLBuilder.build(templet, peoples);
+		Collection[] datas = {peoples};
+		return xmlBuilder.build(templet, datas);
 	}
 	
 	/**
@@ -43,7 +47,7 @@ public class TestXmlBuilder {
 		China china = new China();
 		china.setLatitude("3°„51°‰N÷¡53°„33°‰N");
 		china.setLongitude("73°„33°‰E÷¡135°„05°‰E");
-		return XMLBuilder.build(templet, china);
+		return xmlBuilder.build(templet, china);
 	}
 
 	/**

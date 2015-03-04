@@ -24,8 +24,6 @@
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="test.People"/>
 <fullyQualifiedTypeName name="test.Address"/>
-<fullyQualifiedTypeName name="cn.xml.builders.TempletParser"/>
-<fullyQualifiedTypeName name="cn.xml.builders.XMLBuilder"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="org.dom4j.Attribute"/>
 <fullyQualifiedTypeName name="java.util.Arrays"/>
@@ -34,4 +32,6 @@
 <fullyQualifiedTypeName name="java.util.Collection"/>
 <fullyQualifiedTypeName name="org.dom4j.io.DOMReader"/>
 <fullyQualifiedTypeName name="test.China"/>
+<fullyQualifiedTypeName name="cn.xml.builders.XMLBuilder"/>
+<fullyQualifiedTypeName name="cn.xml.builders.TempletParser"/>
 </qualifiedTypeNameHistroy>
