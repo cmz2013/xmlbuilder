@@ -45,7 +45,7 @@ public class XMLBuilder {
 	public String build(File templet, Collection[] datas) throws DocumentException, 
 			NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, TempletException {
 		Document newDoc = DocumentHelper.createDocument();
-		newDoc.setXMLEncoding("UTF-8");
+		newDoc.setXMLEncoding("GBK");
 		Document templateDoc = parser.parse(templet);
 		
 		Element tRootNode = templateDoc.getRootElement();

@@ -1,7 +1,0 @@
-package cn.xml.builders;
-
-public class TempletException extends Exception {
-
-	private static final long serialVersionUID = 1L;
-
-}
