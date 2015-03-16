@@ -43,9 +43,7 @@ public class XMLBuilder {
 	 */
 	@SuppressWarnings({ "unchecked", "rawtypes"})
 	public String build(File templet, Collection[] datas) throws DocumentException, 
-			NoSuchMethodException, SecurityException, IllegalAccessException, 
-			IllegalArgumentException, InvocationTargetException, TempletException {
-		
+			NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, TempletException {
 		Document newDoc = DocumentHelper.createDocument();
 		newDoc.setXMLEncoding("UTF-8");
 		Document templateDoc = parser.parse(templet);
@@ -106,13 +104,12 @@ public class XMLBuilder {
 	 * @throws IllegalAccessException 
 	 * @throws SecurityException 
 	 * @throws NoSuchMethodException 
-	 * @throws TempletException 
 	 */
 	@SuppressWarnings({ "unchecked"})
 	private void buildChildNode(Element newNode, 
 			List<Element> elements, Collection<Object>[]  datas) throws
 			NoSuchMethodException, SecurityException, IllegalAccessException, 
-			IllegalArgumentException, InvocationTargetException, TempletException {
+			IllegalArgumentException, InvocationTargetException {
 		
 		if (null != elements && elements.size() > 0) {
 			for (Element element : elements) {
@@ -148,13 +145,12 @@ public class XMLBuilder {
 	 * @throws IllegalAccessException 
 	 * @throws SecurityException 
 	 * @throws NoSuchMethodException 
-	 * @throws TempletException 
 	 */
 	@SuppressWarnings({ "unchecked" })
 	private void buildChildNode(Element newNode, 
 			List<Element> elements, Object  data) throws 
 			NoSuchMethodException, SecurityException, IllegalAccessException, 
-			IllegalArgumentException, InvocationTargetException, TempletException {
+			IllegalArgumentException, InvocationTargetException {
 		
 		if (null != elements && elements.size() > 0) {
 			for (Element element : elements) {
@@ -378,12 +374,11 @@ public class XMLBuilder {
 	 * @throws IllegalAccessException 
 	 * @throws SecurityException 
 	 * @throws NoSuchMethodException 
-	 * @throws TempletException 
 	 */
 	private void parseObjectAttribute(
 			Element objectElement, List<Attribute> attributes, Object data) throws 
 			NoSuchMethodException, SecurityException, IllegalAccessException, 
-			IllegalArgumentException, InvocationTargetException, TempletException {
+			IllegalArgumentException, InvocationTargetException {
 		
 		if (null != attributes && attributes.size() > 0) {
 			for (Attribute attr : attributes) {
@@ -391,7 +386,7 @@ public class XMLBuilder {
 				
 				if (AttributeType.PREFIX_ATTRIBUTE == attrType) {
 					String oattrName = attr.getName().substring(10);
-					Object oattrValue = getAttrValue(data, attr);
+					Object oattrValue = getAttrValue(data, attr.getValue());
 					objectElement.addAttribute(oattrName, null == oattrValue ? "" : (oattrValue + ""));
 				} else if (AttributeType.TEXT_VALUE == attrType) {
 					setElementTextValue(objectElement, attr, data);
@@ -412,17 +407,16 @@ public class XMLBuilder {
 	 * @throws IllegalAccessException
 	 * @throws IllegalArgumentException
 	 * @throws InvocationTargetException
-	 * @throws TempletException 
 	 */
 	@SuppressWarnings("rawtypes")
 	private void setElementTextValue(Element element, 
 			Attribute textValueAttr, Object data) throws NoSuchMethodException, 
 			SecurityException, IllegalAccessException, 
-			IllegalArgumentException, InvocationTargetException, TempletException {
+			IllegalArgumentException, InvocationTargetException {
 		
 		List childElements = textValueAttr.getParent().elements();
 		if (null == childElements || childElements.size() == 0) {
-			Object textValue = getAttrValue(data, textValueAttr);
+			Object textValue = getAttrValue(data, textValueAttr.getValue());
 			if (null != textValue) {
 				if (textValue instanceof Collection) {
 					Collection textValues = (Collection) textValue;
@@ -477,10 +471,10 @@ public class XMLBuilder {
 		
 		String field = attr.getValue();
 		if (null == field || "".equals(field = field.trim())) {
-			throw new TempletException("The attribute value is null: " +
-					attr.getParent().getName() + "/" + attr.getName());
+			throw new TempletException("attribute '" + attr.getName() + "' value is null");
 		}
 		
+		field = field.trim();
 		Class clazz = data.getClass(); 
 		String getAttr = "get";
 		if (1 == field.length()) {

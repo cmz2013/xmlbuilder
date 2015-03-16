@@ -43,9 +43,7 @@ public class XMLBuilder {
 	 */
 	@SuppressWarnings({ "unchecked", "rawtypes"})
 	public String build(File templet, Collection[] datas) throws DocumentException, 
-			NoSuchMethodException, SecurityException, IllegalAccessException, 
-			IllegalArgumentException, InvocationTargetException, TempletException {
-		
+			NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, TempletException {
 		Document newDoc = DocumentHelper.createDocument();
 		newDoc.setXMLEncoding("UTF-8");
 		Document templateDoc = parser.parse(templet);
@@ -477,10 +475,11 @@ public class XMLBuilder {
 		
 		String field = attr.getValue();
 		if (null == field || "".equals(field = field.trim())) {
-			throw new TempletException("The attribute value is null: " +
+			throw new TempletException("The value is null: " +
 					attr.getParent().getName() + "/" + attr.getName());
 		}
 		
+		field = field.trim();
 		Class clazz = data.getClass(); 
 		String getAttr = "get";
 		if (1 == field.length()) {

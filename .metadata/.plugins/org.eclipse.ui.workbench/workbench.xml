@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="37" version="2.0">
+<workbench progressCount="34" version="2.0">
 <workbenchAdvisor/>
-<window height="728" maximized="true" width="676" x="289" y="14">
+<window height="728" maximized="true" width="676" x="642" y="0">
 <fastViewData fastViewLocation="1024"/>
 <perspectiveBar>
 <itemSize x="160"/>
@@ -46,6 +46,7 @@
 <part id="3"/>
 <part id="4"/>
 <part id="5"/>
+<part id="6"/>
 </presentation>
 </folder>
 </info>
@@ -58,10 +59,6 @@
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/xmlbuilder/src/cn/xml/builders/NodeType.java"/>
 <editorState selectionHorizontalPixel="0" selectionLength="284" selectionOffset="0" selectionTopPixel="0"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ObjectAttributeResult.java" partName="ObjectAttributeResult.java" path="D:/Work/opensource/xmlbuilder/xmlbuilder/src/cn/xml/builders/ObjectAttributeResult.java" title="ObjectAttributeResult.java" tooltip="xmlbuilder/src/cn/xml/builders/ObjectAttributeResult.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/xmlbuilder/src/cn/xml/builders/ObjectAttributeResult.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="111" selectionTopPixel="0"/>
-</editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TempletParser.java" partName="TempletParser.java" path="D:/Work/opensource/xmlbuilder/xmlbuilder/src/cn/xml/builders/TempletParser.java" title="TempletParser.java" tooltip="xmlbuilder/src/cn/xml/builders/TempletParser.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/xmlbuilder/src/cn/xml/builders/TempletParser.java"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1116" selectionTopPixel="880"/>
@@ -69,9 +66,17 @@
 <editor id="com.android.ide.eclipse.editors.CommonXmlEditor" name="templet.xml" partName="templet.xml" path="D:/Work/opensource/xmlbuilder/xmlbuilder/doc/templet.xml" title="templet.xml" tooltip="xmlbuilder/doc/templet.xml" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/xmlbuilder/doc/templet.xml"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TestXmlBuilder.java" partName="TestXmlBuilder.java" path="D:/Work/opensource/xmlbuilder/xmlbuilder/src/test/TestXmlBuilder.java" title="TestXmlBuilder.java" tooltip="xmlbuilder/src/test/TestXmlBuilder.java" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TestXmlBuilder.java" partName="TestXmlBuilder.java" path="D:/Work/opensource/xmlbuilder/xmlbuilder/src/test/TestXmlBuilder.java" title="TestXmlBuilder.java" tooltip="xmlbuilder/src/test/TestXmlBuilder.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/xmlbuilder/src/test/TestXmlBuilder.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="253" selectionTopPixel="22"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="364" selectionTopPixel="22"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="XMLBuilder.java" partName="XMLBuilder.java" path="D:/Work/opensource/xmlbuilder/xmlbuilder/src/cn/xml/builders/XMLBuilder.java" title="XMLBuilder.java" tooltip="xmlbuilder/src/cn/xml/builders/XMLBuilder.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/xmlbuilder/src/cn/xml/builders/XMLBuilder.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="17131" selectionTopPixel="10864"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TempletException.java" partName="TempletException.java" path="D:/Work/opensource/xmlbuilder/xmlbuilder/src/cn/xml/builders/TempletException.java" title="TempletException.java" tooltip="xmlbuilder/src/cn/xml/builders/TempletException.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/xmlbuilder/src/cn/xml/builders/TempletException.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="224" selectionTopPixel="0"/>
 </editor>
 </editors>
 <views>
@@ -380,7 +385,7 @@
 </folder>
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.2494465" ratioLeft="338" ratioRight="1017" relationship="2" relative="left"/>
-<info folder="true" part="bottom" ratio="0.720517" ratioLeft="446" ratioRight="173" relationship="4" relative="org.eclipse.ui.editorss">
+<info folder="true" part="bottom" ratio="0.7059774" ratioLeft="437" ratioRight="182" relationship="4" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
 <page content="org.eclipse.ui.views.ProblemView" label="LabelNotFound"/>
@@ -549,164 +554,163 @@
 <navigationHistory>
 <editors>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/xmlbuilder/src/cn/xml/builders/XMLBuilder.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/xmlbuilder/src/test/TestXmlBuilder.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/xmlbuilder/src/cn/xml/builders/TempletParser.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/xmlbuilder/src/cn/xml/builders/ObjectAttributeResult.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/xmlbuilder/src/cn/xml/builders/XMLBuilder.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/xmlbuilder/src/cn/xml/builders/TempletException.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/xmlbuilder/src/cn/xml/builders/AttributeType.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/xmlbuilder/src/cn/xml/builders/XMLBuilder.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/xmlbuilder/src/test/TestXmlBuilder.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/xmlbuilder/src/cn/xml/builders/XMLBuilder.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/xmlbuilder/src/cn/xml/builders/ObjectAttributeResult.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/xmlbuilder/src/cn/xml/builders/TempletException.java"/>
 </editors>
-<item historyLabel="TestXmlBuilder.java" index="1">
-<position info="not_deleted" x="909" y="8"/>
-</item>
-<item historyLabel="TestXmlBuilder.java" index="1">
-<position info="not_deleted" x="963" y="0"/>
+<item historyLabel="TempletException.java" index="1">
+<position info="not_deleted" x="41" y="16"/>
 </item>
 <item historyLabel="XMLBuilder.java" index="0">
-<position info="not_deleted" x="794" y="0"/>
-</item>
-<item historyLabel="TestXmlBuilder.java" index="1">
-<position info="not_deleted" x="963" y="0"/>
-</item>
-<item historyLabel="TestXmlBuilder.java" index="1">
-<position info="not_deleted" x="942" y="0"/>
-</item>
-<item historyLabel="TestXmlBuilder.java" index="1">
-<position info="not_deleted" x="964" y="0"/>
-</item>
-<item historyLabel="XMLBuilder.java" index="0">
-<position info="not_deleted" x="764" y="5"/>
-</item>
-<item historyLabel="XMLBuilder.java" index="0">
-<position info="not_deleted" x="784" y="10"/>
-</item>
-<item historyLabel="TestXmlBuilder.java" index="1">
-<position info="not_deleted" x="1371" y="0"/>
-</item>
-<item historyLabel="XMLBuilder.java" index="0">
-<position info="not_deleted" x="1497" y="0"/>
-</item>
-<item historyLabel="TestXmlBuilder.java" index="1">
-<position info="not_deleted" x="1371" y="0"/>
-</item>
-<item historyLabel="TempletParser.java" index="2">
-<position info="not_deleted" x="0" y="1368"/>
-</item>
-<item historyLabel="ObjectAttributeResult.java" index="3">
-<position info="not_deleted" x="111" y="0"/>
-</item>
-<item historyLabel="XMLBuilder.java" index="0">
-<position info="not_deleted" x="699" y="0"/>
-</item>
-<item historyLabel="TempletParser.java" index="2">
-<position info="not_deleted" x="951" y="0"/>
-</item>
-<item historyLabel="TestXmlBuilder.java" index="1">
-<position info="not_deleted" x="494" y="0"/>
-</item>
-<item historyLabel="XMLBuilder.java" index="0">
-<position info="not_deleted" x="0" y="16630"/>
-</item>
-<item historyLabel="TempletParser.java" index="2">
-<position info="not_deleted" x="951" y="0"/>
-</item>
-<item historyLabel="XMLBuilder.java" index="4">
 <position info="not_deleted" x="1706" y="16"/>
 </item>
-<item historyLabel="TempletException.java" index="5">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="TempletException.java" index="5">
-<position info="not_deleted" x="219" y="0"/>
-</item>
-<item historyLabel="TempletException.java" index="5">
-<position info="not_deleted" x="41" y="16"/>
-</item>
-<item historyLabel="TempletException.java" index="5">
-<position/>
-</item>
-<item historyLabel="TempletException.java" index="5">
-<position info="not_deleted" x="41" y="16"/>
-</item>
-<item historyLabel="TempletException.java" index="5">
-<position info="not_deleted" x="219" y="0"/>
-</item>
-<item historyLabel="TempletException.java" index="5">
-<position info="not_deleted" x="41" y="16"/>
-</item>
-<item historyLabel="TempletException.java" index="5">
-<position info="not_deleted" x="41" y="16"/>
-</item>
-<item historyLabel="XMLBuilder.java" index="4">
-<position info="not_deleted" x="1706" y="16"/>
-</item>
-<item historyLabel="XMLBuilder.java" index="4">
+<item historyLabel="XMLBuilder.java" index="0">
 <position info="not_deleted" x="1255" y="0"/>
 </item>
-<item historyLabel="XMLBuilder.java" index="4">
+<item historyLabel="XMLBuilder.java" index="0">
 <position info="not_deleted" x="1337" y="21"/>
 </item>
-<item historyLabel="XMLBuilder.java" index="4">
+<item historyLabel="XMLBuilder.java" index="0">
 <position info="not_deleted" x="738" y="0"/>
 </item>
-<item historyLabel="XMLBuilder.java" index="4">
+<item historyLabel="XMLBuilder.java" index="0">
 <position info="not_deleted" x="977" y="0"/>
 </item>
-<item historyLabel="XMLBuilder.java" index="4">
+<item historyLabel="XMLBuilder.java" index="0">
 <position info="not_deleted" x="1586" y="54"/>
 </item>
-<item historyLabel="XMLBuilder.java" index="4">
+<item historyLabel="XMLBuilder.java" index="0">
 <position info="not_deleted" x="778" y="0"/>
 </item>
-<item historyLabel="XMLBuilder.java" index="4">
+<item historyLabel="XMLBuilder.java" index="0">
 <position info="not_deleted" x="954" y="0"/>
 </item>
-<item historyLabel="XMLBuilder.java" index="4">
+<item historyLabel="XMLBuilder.java" index="0">
 <position info="not_deleted" x="1119" y="0"/>
 </item>
-<item historyLabel="XMLBuilder.java" index="4">
+<item historyLabel="XMLBuilder.java" index="0">
 <position info="not_deleted" x="1581" y="0"/>
 </item>
-<item historyLabel="XMLBuilder.java" index="4">
+<item historyLabel="XMLBuilder.java" index="0">
 <position info="not_deleted" x="1306" y="0"/>
 </item>
-<item historyLabel="TempletException.java" index="5">
+<item historyLabel="TempletException.java" index="1">
 <position info="not_deleted" x="215" y="0"/>
 </item>
-<item historyLabel="AttributeType.java" index="6">
+<item historyLabel="AttributeType.java" index="2">
 <position info="not_deleted" x="0" y="279"/>
 </item>
-<item historyLabel="XMLBuilder.java" index="7">
+<item historyLabel="XMLBuilder.java" index="3">
 <position/>
 </item>
-<item historyLabel="TestXmlBuilder.java" index="8">
+<item historyLabel="TestXmlBuilder.java" index="4">
 <position info="not_deleted" x="758" y="0"/>
 </item>
-<item historyLabel="XMLBuilder.java" index="7">
+<item historyLabel="XMLBuilder.java" index="3">
 <position/>
 </item>
-<item historyLabel="TestXmlBuilder.java" index="8">
+<item historyLabel="TestXmlBuilder.java" index="4">
 <position info="not_deleted" x="620" y="0"/>
 </item>
-<item historyLabel="XMLBuilder.java" index="7">
+<item historyLabel="XMLBuilder.java" index="3">
 <position/>
 </item>
-<item historyLabel="TestXmlBuilder.java" index="8">
+<item historyLabel="TestXmlBuilder.java" index="4">
 <position info="not_deleted" x="620" y="0"/>
 </item>
-<item historyLabel="TestXmlBuilder.java" index="8">
+<item historyLabel="TestXmlBuilder.java" index="4">
 <position info="not_deleted" x="1363" y="0"/>
 </item>
-<item historyLabel="TestXmlBuilder.java" index="8">
+<item historyLabel="TestXmlBuilder.java" index="4">
 <position info="not_deleted" x="217" y="0"/>
 </item>
-<item historyLabel="XMLBuilder.java" index="7">
+<item historyLabel="XMLBuilder.java" index="3">
 <position info="not_deleted" x="1345" y="0"/>
 </item>
-<item active="true" historyLabel="TestXmlBuilder.java" index="8">
+<item historyLabel="TestXmlBuilder.java" index="4">
 <position info="not_deleted" x="217" y="0"/>
+</item>
+<item historyLabel="XMLBuilder.java" index="5">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="XMLBuilder.java" index="5">
+<position info="not_deleted" x="10163" y="0"/>
+</item>
+<item historyLabel="XMLBuilder.java" index="5">
+<position info="not_deleted" x="16024" y="12"/>
+</item>
+<item historyLabel="XMLBuilder.java" index="5">
+<position info="not_deleted" x="10164" y="0"/>
+</item>
+<item historyLabel="XMLBuilder.java" index="5">
+<position info="not_deleted" x="16024" y="12"/>
+</item>
+<item historyLabel="XMLBuilder.java" index="5">
+<position info="not_deleted" x="16315" y="0"/>
+</item>
+<item historyLabel="XMLBuilder.java" index="5">
+<position info="not_deleted" x="16285" y="0"/>
+</item>
+<item historyLabel="XMLBuilder.java" index="5">
+<position info="not_deleted" x="16439" y="0"/>
+</item>
+<item historyLabel="XMLBuilder.java" index="5">
+<position info="not_deleted" x="16323" y="118"/>
+</item>
+<item historyLabel="ObjectAttributeResult.java" index="6">
+<position info="not_deleted" x="111" y="0"/>
+</item>
+<item historyLabel="ObjectAttributeResult.java" index="6">
+<position info="not_deleted" x="747" y="0"/>
+</item>
+<item historyLabel="XMLBuilder.java" index="5">
+<position info="not_deleted" x="11114" y="0"/>
+</item>
+<item historyLabel="XMLBuilder.java" index="5">
+<position info="not_deleted" x="10156" y="24"/>
+</item>
+<item historyLabel="XMLBuilder.java" index="5">
+<position info="not_deleted" x="7101" y="0"/>
+</item>
+<item historyLabel="XMLBuilder.java" index="5">
+<position info="not_deleted" x="7037" y="56"/>
+</item>
+<item historyLabel="XMLBuilder.java" index="5">
+<position info="not_deleted" x="12512" y="7"/>
+</item>
+<item historyLabel="XMLBuilder.java" index="5">
+<position info="not_deleted" x="12522" y="24"/>
+</item>
+<item historyLabel="XMLBuilder.java" index="5">
+<position info="not_deleted" x="13587" y="24"/>
+</item>
+<item historyLabel="XMLBuilder.java" index="5">
+<position info="not_deleted" x="14650" y="33"/>
+</item>
+<item historyLabel="XMLBuilder.java" index="5">
+<position info="not_deleted" x="4288" y="0"/>
+</item>
+<item historyLabel="XMLBuilder.java" index="5">
+<position info="not_deleted" x="4155" y="63"/>
+</item>
+<item historyLabel="XMLBuilder.java" index="5">
+<position info="not_deleted" x="5645" y="0"/>
+</item>
+<item historyLabel="XMLBuilder.java" index="5">
+<position info="not_deleted" x="5514" y="63"/>
+</item>
+<item historyLabel="XMLBuilder.java" index="5">
+<position info="not_deleted" x="16421" y="0"/>
+</item>
+<item historyLabel="XMLBuilder.java" index="5">
+<position info="not_deleted" x="17131" y="0"/>
+</item>
+<item active="true" historyLabel="TempletException.java" index="7">
+<position info="not_deleted" x="0" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -733,11 +737,11 @@
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="XMLBuilder.java" tooltip="xmlbuilder/src/cn/xml/builders/XMLBuilder.java">
-<persistable path="/xmlbuilder/src/cn/xml/builders/XMLBuilder.java"/>
-</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TempletException.java" tooltip="xmlbuilder/src/cn/xml/builders/TempletException.java">
 <persistable path="/xmlbuilder/src/cn/xml/builders/TempletException.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="XMLBuilder.java" tooltip="xmlbuilder/src/cn/xml/builders/XMLBuilder.java">
+<persistable path="/xmlbuilder/src/cn/xml/builders/XMLBuilder.java"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TestXmlBuilder.java" tooltip="xmlbuilder/src/test/TestXmlBuilder.java">
 <persistable path="/xmlbuilder/src/test/TestXmlBuilder.java"/>

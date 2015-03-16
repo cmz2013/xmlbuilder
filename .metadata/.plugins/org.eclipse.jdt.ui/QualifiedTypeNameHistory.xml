@@ -34,4 +34,5 @@
 <fullyQualifiedTypeName name="test.China"/>
 <fullyQualifiedTypeName name="cn.xml.builders.XMLBuilder"/>
 <fullyQualifiedTypeName name="cn.xml.builders.TempletParser"/>
+<fullyQualifiedTypeName name="cn.xml.builders.TempletException"/>
 </qualifiedTypeNameHistroy>
