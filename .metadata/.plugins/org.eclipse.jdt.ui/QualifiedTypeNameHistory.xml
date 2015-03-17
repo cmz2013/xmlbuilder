@@ -35,4 +35,5 @@
 <fullyQualifiedTypeName name="cn.xml.builders.XMLBuilder"/>
 <fullyQualifiedTypeName name="cn.xml.builders.TempletParser"/>
 <fullyQualifiedTypeName name="cn.xml.builders.TempletException"/>
+<fullyQualifiedTypeName name="java.lang.reflect.Field"/>
 </qualifiedTypeNameHistroy>

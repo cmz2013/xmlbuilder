@@ -1,8 +1,7 @@
 package cn.xml.builders;
 
 import java.io.File;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
+import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
@@ -29,22 +28,18 @@ public class XMLBuilder {
 	
 	/**
 	 * 将数据实例集datas转换成xml字符串，注意：PREFIX_OBJECT节点不可作为根节点
+	 * 
 	 * @param templet
 	 * @param datas
 	 * @return
-	 * @throws DocumentException 
-	 * @throws InvocationTargetException 
-	 * @throws IllegalArgumentException 
-	 * @throws IllegalAccessException 
-	 * @throws SecurityException 
-	 * @throws NoSuchMethodException 
-	 * @throws TempletException 
-	 * @throws Exception
+	 * @throws DocumentException
+	 * @throws IllegalAccessException
+	 * @throws TempletException
+	 * @throws NoSuchFieldException
 	 */
 	@SuppressWarnings({ "unchecked", "rawtypes"})
 	public String build(File templet, Collection[] datas) throws DocumentException, 
-			NoSuchMethodException, SecurityException, IllegalAccessException, 
-			IllegalArgumentException, InvocationTargetException, TempletException {
+				IllegalAccessException, TempletException, NoSuchFieldException {
 		
 		Document newDoc = DocumentHelper.createDocument();
 		newDoc.setXMLEncoding("UTF-8");
@@ -101,18 +96,14 @@ public class XMLBuilder {
 	 * @param newNode
 	 * @param elements
 	 * @param datas
-	 * @throws InvocationTargetException 
-	 * @throws IllegalArgumentException 
-	 * @throws IllegalAccessException 
-	 * @throws SecurityException 
-	 * @throws NoSuchMethodException 
-	 * @throws TempletException 
+	 * @throws IllegalAccessException
+	 * @throws TempletException
+	 * @throws NoSuchFieldException
 	 */
 	@SuppressWarnings({ "unchecked"})
 	private void buildChildNode(Element newNode, 
 			List<Element> elements, Collection<Object>[]  datas) throws
-			NoSuchMethodException, SecurityException, IllegalAccessException, 
-			IllegalArgumentException, InvocationTargetException, TempletException {
+			IllegalAccessException, TempletException, NoSuchFieldException {
 		
 		if (null != elements && elements.size() > 0) {
 			for (Element element : elements) {
@@ -143,18 +134,14 @@ public class XMLBuilder {
 	 * @param newNode
 	 * @param elements
 	 * @param data
-	 * @throws InvocationTargetException 
-	 * @throws IllegalArgumentException 
-	 * @throws IllegalAccessException 
-	 * @throws SecurityException 
-	 * @throws NoSuchMethodException 
-	 * @throws TempletException 
+	 * @throws IllegalAccessException
+	 * @throws TempletException
+	 * @throws NoSuchFieldException
 	 */
 	@SuppressWarnings({ "unchecked" })
 	private void buildChildNode(Element newNode, 
 			List<Element> elements, Object  data) throws 
-			NoSuchMethodException, SecurityException, IllegalAccessException, 
-			IllegalArgumentException, InvocationTargetException, TempletException {
+			IllegalAccessException, TempletException, NoSuchFieldException {
 		
 		if (null != elements && elements.size() > 0) {
 			for (Element element : elements) {
@@ -179,18 +166,14 @@ public class XMLBuilder {
 	 * @param objectElement
 	 * @param childElements
 	 * @param data
-	 * @throws InvocationTargetException 
-	 * @throws IllegalArgumentException 
-	 * @throws IllegalAccessException 
-	 * @throws SecurityException 
-	 * @throws NoSuchMethodException 
-	 * @throws TempletException 
+	 * @throws IllegalAccessException
+	 * @throws TempletException
+	 * @throws NoSuchFieldException
 	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	private void parseObjectElement(
 			Element objectElement, List<Element> childElements, Object data) throws 
-			NoSuchMethodException, SecurityException, IllegalAccessException, 
-			IllegalArgumentException, InvocationTargetException, TempletException {
+			IllegalAccessException, TempletException, NoSuchFieldException {
 		
 		if (null != childElements && childElements.size() > 0) {
 			for (Element childElement : childElements) {
@@ -271,18 +254,14 @@ public class XMLBuilder {
 	 * @param attributes
 	 * @param data
 	 * @return
-	 * @throws InvocationTargetException 
-	 * @throws IllegalArgumentException 
-	 * @throws IllegalAccessException 
-	 * @throws SecurityException 
-	 * @throws NoSuchMethodException 
-	 * @throws TempletException 
+	 * @throws IllegalAccessException
+	 * @throws TempletException
+	 * @throws NoSuchFieldException
 	 */
 	@SuppressWarnings({ "rawtypes" })
 	private ObjectAttributeResult parseMemObjectAttribute(
-			List<Attribute> attributes, Object data) throws NoSuchMethodException, 
-			SecurityException, IllegalAccessException, 
-			IllegalArgumentException, InvocationTargetException, TempletException {
+			List<Attribute> attributes, Object data) throws  
+			IllegalAccessException, TempletException, NoSuchFieldException {
 		
 		ObjectAttributeResult result = new ObjectAttributeResult();
 		Object memData = null;
@@ -330,20 +309,15 @@ public class XMLBuilder {
 	 * @param memoe
 	 * @param attributes
 	 * @param data
-	 * @return object_data属性对应的数据
-	 * 
-	 * @throws InvocationTargetException 
-	 * @throws IllegalArgumentException 
-	 * @throws IllegalAccessException 
-	 * @throws SecurityException 
-	 * @throws NoSuchMethodException 
-	 * @throws TempletException 
+	 * @return
+	 * @throws IllegalAccessException
+	 * @throws TempletException
+	 * @throws NoSuchFieldException
 	 */
 	@SuppressWarnings("unchecked")
 	private Object parseMemObjectAttribute(
 			Element memoe, List<Attribute> attributes, Object data) throws 
-			NoSuchMethodException, SecurityException, IllegalAccessException, 
-			IllegalArgumentException, InvocationTargetException, TempletException {
+			IllegalAccessException, TempletException, NoSuchFieldException {
 		
 		Object memData = null;
 		if (null != attributes && attributes.size() > 0) {
@@ -373,17 +347,13 @@ public class XMLBuilder {
 	 * @param objectElement
 	 * @param attributes
 	 * @param data
-	 * @throws InvocationTargetException 
-	 * @throws IllegalArgumentException 
-	 * @throws IllegalAccessException 
-	 * @throws SecurityException 
-	 * @throws NoSuchMethodException 
-	 * @throws TempletException 
+	 * @throws IllegalAccessException
+	 * @throws TempletException
+	 * @throws NoSuchFieldException
 	 */
 	private void parseObjectAttribute(
 			Element objectElement, List<Attribute> attributes, Object data) throws 
-			NoSuchMethodException, SecurityException, IllegalAccessException, 
-			IllegalArgumentException, InvocationTargetException, TempletException {
+			IllegalAccessException, TempletException, NoSuchFieldException {
 		
 		if (null != attributes && attributes.size() > 0) {
 			for (Attribute attr : attributes) {
@@ -407,18 +377,14 @@ public class XMLBuilder {
 	 * @param element
 	 * @param textValueAttr
 	 * @param data
-	 * @throws NoSuchMethodException
-	 * @throws SecurityException
 	 * @throws IllegalAccessException
-	 * @throws IllegalArgumentException
-	 * @throws InvocationTargetException
-	 * @throws TempletException 
+	 * @throws TempletException
+	 * @throws NoSuchFieldException
 	 */
 	@SuppressWarnings("rawtypes")
 	private void setElementTextValue(Element element, 
-			Attribute textValueAttr, Object data) throws NoSuchMethodException, 
-			SecurityException, IllegalAccessException, 
-			IllegalArgumentException, InvocationTargetException, TempletException {
+			Attribute textValueAttr, Object data) throws
+			IllegalAccessException, TempletException, NoSuchFieldException {
 		
 		List childElements = textValueAttr.getParent().elements();
 		if (null == childElements || childElements.size() == 0) {
@@ -461,36 +427,33 @@ public class XMLBuilder {
 	/**
 	 * 获取data.field的值
 	 * @param data
-	 * @param attr.getValue(): field
+	 * @param attr
 	 * @return
-	 * @throws NoSuchMethodException
-	 * @throws SecurityException
 	 * @throws IllegalAccessException
-	 * @throws IllegalArgumentException
-	 * @throws InvocationTargetException
-	 * @throws TempletException 
+	 * @throws TempletException
+	 * @throws NoSuchFieldException
 	 */
-	@SuppressWarnings({ "rawtypes", "unchecked" })
+	@SuppressWarnings({ "rawtypes" })
 	private Object getAttrValue(Object data, Attribute attr) throws 
-			NoSuchMethodException, SecurityException, IllegalAccessException, 
-			IllegalArgumentException, InvocationTargetException, TempletException {
+			 IllegalAccessException, TempletException, NoSuchFieldException {
 		
-		String field = attr.getValue();
-		if (null == field || "".equals(field = field.trim())) {
+		String fieldName = attr.getValue();
+		if (null == fieldName || "".equals(fieldName = fieldName.trim())) {
 			throw new TempletException("The attribute value is null: " +
 					attr.getParent().getName() + "/" + attr.getName());
 		}
 		
 		Class clazz = data.getClass(); 
-		String getAttr = "get";
-		if (1 == field.length()) {
-			getAttr += field.toUpperCase();
-		} else {
-			getAttr += (field.substring(0, 1).toUpperCase() + field.substring(1));
-		}
+		Field field = clazz.getDeclaredField(fieldName);
 		
-        Method method = clazz.getDeclaredMethod(getAttr); 
-       return method.invoke(data);
+		if (field.isAccessible()) {
+			return  field.get(data);
+		} else {
+			field.setAccessible(true);
+			Object value =  field.get(data);
+			field.setAccessible(false);
+			return value;
+		}
 	}
 	
 	/**

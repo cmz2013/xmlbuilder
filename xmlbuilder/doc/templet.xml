@@ -12,7 +12,6 @@
 	   2）memobject_*，*代表节点名称，对应一个数据实例，属性object_data值为object_0对应数据实例的属性名，memobject是object_0的成员。
 	   3）其他普通元素
 	4. 所有节点名称和属性名称，在实际应用中自定义。
-	5. 节点对应的Java类，其属性必须有get方法：get+属性名(第一个字母大写)。
 -->
 
   <object_0 attribute_1="">
