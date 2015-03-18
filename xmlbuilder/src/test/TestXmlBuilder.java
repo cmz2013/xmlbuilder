@@ -33,7 +33,7 @@ public class TestXmlBuilder {
 			people.setAddress(address);
 			peoples.add(people);
 		}
-		Collection[] datas = {peoples};
+		Collection[] datas = {peoples, peoples};
 		return xmlBuilder.build(templet, datas);
 	}
 	
