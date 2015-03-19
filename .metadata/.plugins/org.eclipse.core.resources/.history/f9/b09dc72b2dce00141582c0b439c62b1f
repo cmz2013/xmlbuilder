@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import cn.xml.XMLBuilder;
+import cn.xml.builders.XMLBuilder;
 
 public class TestXmlBuilder {
 	
