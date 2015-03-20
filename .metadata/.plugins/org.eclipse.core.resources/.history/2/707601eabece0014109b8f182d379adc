@@ -423,7 +423,7 @@ public class XMLBuilder {
 				setElementTextValue(element, textValues);
 			} else {
 				if (null != element.getText() && !"".equals(element.getText())) {
-					element.setText(element.getText() + textValue);
+					element.setText(element.getText() + "\t\n" + textValue);
 				} else {
 					element.setText(textValue + "");
 				}
@@ -442,7 +442,7 @@ public class XMLBuilder {
 		if (null != textValues && textValues.length > 0) {
 			String ttext = element.getText();
 			if (null != ttext && !"".equals(ttext)) {
-				element.setText(ttext + textValues[0]);
+				element.setText(ttext + "\t\n" + textValues[0]);
 			} else {
 				element.setText(textValues[0] + "");
 			}
@@ -454,7 +454,7 @@ public class XMLBuilder {
 					copyElementArrt(element, newElement);
 					
 					if (null != ttext && !"".equals(ttext)) {
-						newElement.setText(ttext + textValues[i]);
+						newElement.setText(ttext + "\t\n" + textValues[i]);
 					} else {
 						newElement.setText(textValues[i] + "");
 					}

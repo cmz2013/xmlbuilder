@@ -7,7 +7,7 @@
 	<memobject_address object_data="address">
 	    bbb
 		<position text_value="position" />
-		<postcode text_value="postcode">ccc</postcode>     
+		<postcode text_value="postcode" />       
 	</memobject_address>
   </object_people>
   <object_people attribute_name="name">
