@@ -43,6 +43,7 @@ public class XMLBuilder {
 	public String build(File templet, Collection[] datas) throws DocumentException, 
 				IllegalAccessException, TempletException, NoSuchFieldException {
 		
+		oni = 0;
 		Document newDoc = DocumentHelper.createDocument();
 		newDoc.setXMLEncoding(xmlEncoding);
 		Document templateDoc = parser.parse(templet);
@@ -71,7 +72,7 @@ public class XMLBuilder {
 	 * @throws Exception
 	 */
 	@SuppressWarnings({ "unchecked"})
-	public String build(File templet, Object data) throws Exception{
+	public String build(File templet, Object data) throws Exception {
 		Document newDoc = DocumentHelper.createDocument();; 
 		Document templateDoc = parser.parse(templet);
 		
@@ -120,6 +121,11 @@ public class XMLBuilder {
 						String objectName = element.getName().substring(7);
 						for (Object data : datas[oni]) {
 							Element objectElement = newNode.addElement(objectName);
+							String text = element.getText();
+							if (null != text && !"".equals(text = text.trim())) {
+								objectElement.setText(text);
+							}
+							
 							parseObjectAttribute(objectElement, element.attributes(), data);
 							parseObjectElement(objectElement, element.elements(), data);
 						}
@@ -156,6 +162,11 @@ public class XMLBuilder {
 				} else if (NodeType.PREFIX_OBJECT == elementType) {
 					String objectName = element.getName().substring(7);
 					Element objectElement = newNode.addElement(objectName);
+					String text = element.getText();
+					if (null != text && !"".equals(text = text.trim())) {
+						objectElement.setText(text);
+					}
+					
 					parseObjectAttribute(objectElement, element.attributes(), data);
 					parseObjectElement(objectElement, element.elements(), data);
 				} 
@@ -184,6 +195,11 @@ public class XMLBuilder {
 				if (NodeType.PREFIX_MEMOBJECT== elementType) {
 					String memoName = childElement.getName().substring(10);
 					Element memoe = objectElement.addElement(memoName);
+					String text = childElement.getText();
+					if (null != text && !"".equals(text = text.trim())) {
+						memoe.setText(text);
+					}
+					
 					Object memData =
 							parseMemObjectAttribute(memoe, childElement.attributes(), data);
 					
@@ -200,37 +216,46 @@ public class XMLBuilder {
 							Collection datas = (Collection) result.getData();
 							for (Object memData : datas) {
 								Element memoesi = objectElement.addElement(memosName);
-								setElementAttribute(memoesi, result.getAttrMap());
-								List childes = childElement.elements();
-								if (null == childes || childes.size() == 0) {
-									setElementTextValue(memoesi, result.getTextValue());
-								} else {
-									parseObjectElement(memoesi, childes, memData);
+								String text = childElement.getText();
+								if (null != text && !"".equals(text = text.trim())) {
+									memoesi.setText(text);
 								}
+								
+								setElementAttribute(memoesi, result.getAttrMap());
+								setElementTextValue(memoesi, result.getTextValue());
+								parseObjectElement(memoesi, childElement.elements(), memData);
 							}
 						} else if (result.getData() instanceof Object[]) {
 							Object[] datas = (Object[]) result.getData();
 							for (Object memData : datas) {
 								Element memoesi = objectElement.addElement(memosName);
-								setElementAttribute(memoesi, result.getAttrMap());
-								List childes = childElement.elements();
-								if (null == childes || childes.size() == 0) {
-									setElementTextValue(memoesi, result.getTextValue());
-								} else {
-									parseObjectElement(memoesi, childes, memData);
+								String text = childElement.getText();
+								if (null != text && !"".equals(text = text.trim())) {
+									memoesi.setText(text);
 								}
+								
+								setElementAttribute(memoesi, result.getAttrMap());
+								setElementTextValue(memoesi, result.getTextValue());
+								parseObjectElement(memoesi, childElement.elements(), memData);
 							}
 						}
 					} else {
 						Element memoesi = objectElement.addElement(memosName);
-						setElementAttribute(memoesi, result.getAttrMap());
-						List childes = childElement.elements();
-						if (null == childes || childes.size() == 0) {
-							setElementTextValue(memoesi, result.getTextValue());
+						String text = childElement.getText();
+						if (null != text && !"".equals(text = text.trim())) {
+							memoesi.setText(text);
 						}
+						
+						setElementAttribute(memoesi, result.getAttrMap());
+						setElementTextValue(memoesi, result.getTextValue());
 					}
 				} else {
 					Element objChildElement = objectElement.addElement(childElement.getName());
+					String text = childElement.getText();
+					if (null != text && !"".equals(text = text.trim())) {
+						objChildElement.setText(text);
+					}
+					
 					parseObjectAttribute(objChildElement, childElement.attributes(), data);
 					parseObjectElement(objChildElement, childElement.elements(), data);
 				}
@@ -388,16 +413,17 @@ public class XMLBuilder {
 			Attribute textValueAttr, Object data) throws
 			IllegalAccessException, TempletException, NoSuchFieldException {
 		
-		List childElements = textValueAttr.getParent().elements();
-		if (null == childElements || childElements.size() == 0) {
-			Object textValue = getAttrValue(data, textValueAttr);
-			if (null != textValue) {
-				if (textValue instanceof Collection) {
-					Collection textValues = (Collection) textValue;
-					setElementTextValue(element, textValues);
-				} else if (textValue instanceof Object[]) {
-					Object[] textValues = (Object[]) textValue;
-					setElementTextValue(element, textValues);
+		Object textValue = getAttrValue(data, textValueAttr);
+		if (null != textValue) {
+			if (textValue instanceof Collection) {
+				Collection textValues = (Collection) textValue;
+				setElementTextValue(element, textValues);
+			} else if (textValue instanceof Object[]) {
+				Object[] textValues = (Object[]) textValue;
+				setElementTextValue(element, textValues);
+			} else {
+				if (null != element.getText() && !"".equals(element.getText())) {
+					element.setText(element.getText() + "\t\n" + textValue);
 				} else {
 					element.setText(textValue + "");
 				}
@@ -414,13 +440,24 @@ public class XMLBuilder {
 			Element element, Object...textValues) {
 		
 		if (null != textValues && textValues.length > 0) {
-			element.setText(textValues[0] + "");
+			String ttext = element.getText();
+			if (null != ttext && !"".equals(ttext)) {
+				element.setText(ttext + "\t\n" + textValues[0]);
+			} else {
+				element.setText(textValues[0] + "");
+			}
+			
 			if (textValues.length > 1) {
 				Element parent = element.getParent();
 				for (int i = 1; i < textValues.length; i++) {
 					Element newElement = parent.addElement(element.getName());
 					copyElementArrt(element, newElement);
-					newElement.setText(textValues[i] + "");
+					
+					if (null != ttext && !"".equals(ttext)) {
+						newElement.setText(ttext + "\t\n" + textValues[i]);
+					} else {
+						newElement.setText(textValues[i] + "");
+					}
 				}
 			}
 		}
@@ -464,8 +501,8 @@ public class XMLBuilder {
 	 * @return
 	 */
 	private void copyElement(Element element, Element newElement) {
-		String text = element.getTextTrim();
-		if (null != text && !"".equals(text)) {
+		String text = element.getText();
+		if (null != text && !"".equals(text = text.trim())) {
 			newElement.setText(text);
 		}
 		copyElementArrt(element, newElement);

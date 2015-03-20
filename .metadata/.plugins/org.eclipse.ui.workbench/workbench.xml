@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="49" version="2.0">
+<workbench progressCount="32" version="2.0">
 <workbenchAdvisor/>
 <window height="728" maximized="true" width="676" x="642" y="0">
 <fastViewData fastViewLocation="1024"/>
@@ -66,9 +66,9 @@
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/xmlbuilder/src/test/TestXmlBuilder.java"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="949" selectionTopPixel="458"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="XMLBuilder.java" partName="XMLBuilder.java" path="D:/Work/opensource/xmlbuilder/xmlbuilder/src/cn/xml/builders/XMLBuilder.java" title="XMLBuilder.java" tooltip="xmlbuilder/src/cn/xml/builders/XMLBuilder.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/xmlbuilder/src/cn/xml/builders/XMLBuilder.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2108" selectionTopPixel="0"/>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="XMLBuilder.java" partName="XMLBuilder.java" path="D:/Work/opensource/xmlbuilder/xmlbuilder/src/cn/xml/XMLBuilder.java" title="XMLBuilder.java" tooltip="xmlbuilder/src/cn/xml/XMLBuilder.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/xmlbuilder/src/cn/xml/XMLBuilder.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2163" selectionTopPixel="1342"/>
 </editor>
 <editor id="com.android.ide.eclipse.editors.CommonXmlEditor" name="People.xml" partName="People.xml" path="D:/Work/opensource/xmlbuilder/xmlbuilder/src/test/People.xml" title="People.xml" tooltip="xmlbuilder/src/test/People.xml" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/xmlbuilder/src/test/People.xml"/>
@@ -379,7 +379,7 @@
 </folder>
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.17490774" ratioLeft="237" ratioRight="1118" relationship="2" relative="left"/>
-<info folder="true" part="bottom" ratio="0.55088854" ratioLeft="341" ratioRight="278" relationship="4" relative="org.eclipse.ui.editorss">
+<info folder="true" part="bottom" ratio="0.71405494" ratioLeft="442" ratioRight="177" relationship="4" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
 <page content="org.eclipse.ui.views.ProblemView" label="LabelNotFound"/>
@@ -552,28 +552,11 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/xmlbuilder/src/test/TestXmlBuilder.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/xmlbuilder/src/test/People.xml"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/xmlbuilder/src/cn/xml/builders/XMLBuilder.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/xmlbuilder/src/cn/xml/XMLBuilder.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/testandr/src/com/example/testandr/MainActivity.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="" path="/testandr/res/layout/activity_main.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" path="/testandr/AndroidManifest.xml"/>
 </editors>
-<item historyLabel="XMLBuilder.java" index="0">
-<position info="not_deleted" x="8691" y="0"/>
-</item>
-<item historyLabel="XMLBuilder.java" index="0">
-<position info="not_deleted" x="9121" y="24"/>
-</item>
-<item historyLabel="XMLBuilder.java" index="0">
-<position info="not_deleted" x="6194" y="56"/>
-</item>
-<item historyLabel="XMLBuilder.java" index="0">
-<position info="not_deleted" x="5858" y="0"/>
-</item>
-<item historyLabel="XMLBuilder.java" index="0">
-<position info="not_deleted" x="10380" y="23"/>
-</item>
-<item historyLabel="XMLBuilder.java" index="0">
-<position info="not_deleted" x="10472" y="0"/>
-</item>
-<item historyLabel="XMLBuilder.java" index="0">
-<position info="not_deleted" x="10792" y="38"/>
-</item>
 <item historyLabel="XMLBuilder.java" index="0">
 <position/>
 </item>
@@ -690,8 +673,27 @@
 <position info="not_deleted" x="2201" y="0"/>
 </item>
 <item historyLabel="templet.xml" index="2"/>
-<item active="true" historyLabel="XMLBuilder.java" index="6">
+<item historyLabel="XMLBuilder.java" index="6">
 <position info="not_deleted" x="2201" y="0"/>
+</item>
+<item historyLabel="XMLBuilder.java" index="7">
+<position info="not_deleted" x="2108" y="0"/>
+</item>
+<item historyLabel="XMLBuilder.java" index="7">
+<position info="not_deleted" x="2163" y="0"/>
+</item>
+<item historyLabel="MainActivity.java" index="8">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="activity_main.xml" index="9">
+<position info="not_deleted" x="516" y="147"/>
+</item>
+<item historyLabel="MainActivity.java" index="8">
+<position info="not_deleted" x="331" y="0"/>
+</item>
+<item historyLabel="testandr Manifest" index="10"/>
+<item active="true" historyLabel="XMLBuilder.java" index="7">
+<position info="not_deleted" x="2163" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -699,12 +701,6 @@
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 <trimLayout>
-<trimArea IMemento.internal.id="16384">
-<trimItem IMemento.internal.id="left"/>
-</trimArea>
-<trimArea IMemento.internal.id="131072">
-<trimItem IMemento.internal.id="bottom"/>
-</trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
 <trimItem IMemento.internal.id="org.eclipse.mylyn.tasks.ui.trim.container"/>
@@ -717,6 +713,15 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" tooltip="testandr/AndroidManifest.xml">
+<persistable path="/testandr/AndroidManifest.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="activity_main.xml" tooltip="testandr/res/layout/activity_main.xml">
+<persistable path="/testandr/res/layout/activity_main.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MainActivity.java" tooltip="testandr/src/com/example/testandr/MainActivity.java">
+<persistable path="/testandr/src/com/example/testandr/MainActivity.java"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="People.xml" tooltip="xmlbuilder/src/test/People.xml">
 <persistable path="/xmlbuilder/src/test/People.xml"/>
 </file>
@@ -752,15 +757,6 @@
 </file>
 <file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="net.sf.jadclipse.JadclipseClassFileEditor" name="Class.class" tooltip="java.lang.Class">
 <persistable org.eclipse.jdt.ui.ClassFileIdentifier="=xmlbuilder/D:\/Tool\/jdk\/jdk7-64\/jre\/lib\/rt.jar&lt;java.lang(Class.class"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Snippet.java" tooltip="time/src/snippet/Snippet.java">
-<persistable path="/time/src/snippet/Snippet.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RemindDateUtils.java" tooltip="temp/src/RemindDateUtils.java">
-<persistable path="/temp/src/RemindDateUtils.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Snippet.java" tooltip="temp/src/snippet/Snippet.java">
-<persistable path="/temp/src/snippet/Snippet.java"/>
 </file>
 </mruList>
 </workbench>
