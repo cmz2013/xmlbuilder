@@ -1766,3 +1766,19 @@ java.lang.NullPointerException
 
 !ENTRY com.android.ide.eclipse.adt 2 0 2015-03-20 13:03:42.052
 !MESSAGE No projects found for [D:\Work\opensource\xmlbuilder\xmlbuilder\src\test\People.xml]
+!SESSION 2015-03-26 17:13:56.555 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.7.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=zh_CN
+Framework arguments:  -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product -data D:\Work\opensource\xmlbuilder -product org.eclipse.epp.package.jee.product
+
+!ENTRY jp.gr.java_conf.ussiy.app.propedit 1 0 2015-03-26 17:14:02.202
+!MESSAGE properties loading 'xmlbuilder'
+
+!ENTRY com.android.ide.eclipse.adt 1 0 2015-03-26 17:32:57.854
+!MESSAGE No valid Android XML Editor Delegate found for file /xmlbuilder/src/test/People.xml [Res null, type null]
+
+!ENTRY com.android.ide.eclipse.adt 1 0 2015-03-26 17:33:16.449
+!MESSAGE No valid Android XML Editor Delegate found for file /xmlbuilder/src/test/China.xml [Res null, type null]

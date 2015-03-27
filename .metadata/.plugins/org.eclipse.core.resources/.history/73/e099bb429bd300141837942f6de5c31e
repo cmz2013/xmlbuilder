@@ -73,8 +73,7 @@ public class XMLBuilder {
 	 */
 	@SuppressWarnings({ "unchecked"})
 	public String build(File templet, Object data) throws Exception {
-		Document newDoc = DocumentHelper.createDocument();
-		newDoc.setXMLEncoding(xmlEncoding);
+		Document newDoc = DocumentHelper.createDocument();; 
 		Document templateDoc = parser.parse(templet);
 		
 		Element tRootNode = templateDoc.getRootElement();
