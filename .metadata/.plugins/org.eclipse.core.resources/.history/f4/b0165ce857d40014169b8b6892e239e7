@@ -56,6 +56,7 @@ public class TestXmlBuilder {
 	 */
 	public static void main(String[] args) throws Exception {
 		System.out.println(test1());
+		System.out.println("\n");
 		System.out.println(test2());
 	}
 

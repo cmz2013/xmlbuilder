@@ -24,7 +24,7 @@
 <coolItem id="org.eclipse.wst.server.ui.internal.webbrowser.actionSet" itemType="typeToolBarContribution" x="38" y="22"/>
 <coolItem id="org.eclipse.wst.ws.explorer.explorer" itemType="typeToolBarContribution" x="38" y="22"/>
 <coolItem id="org.eclipse.wst.xml.ui.perspective.NewFileToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
-<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="61" y="22"/>
+<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="198" y="22"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
@@ -45,6 +45,8 @@
 <part id="2"/>
 <part id="3"/>
 <part id="4"/>
+<part id="5"/>
+<part id="6"/>
 </presentation>
 </folder>
 </info>
@@ -57,17 +59,25 @@
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/xmlbuilder/src/cn/xml/builders/NodeType.java"/>
 <editorState selectionHorizontalPixel="0" selectionLength="284" selectionOffset="0" selectionTopPixel="0"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TempletParser.java" partName="TempletParser.java" path="D:/Work/opensource/xmlbuilder/xmlbuilder/src/cn/xml/builders/TempletParser.java" title="TempletParser.java" tooltip="xmlbuilder/src/cn/xml/builders/TempletParser.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/xmlbuilder/src/cn/xml/builders/TempletParser.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1116" selectionTopPixel="880"/>
-</editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TestXmlBuilder.java" partName="TestXmlBuilder.java" path="D:/Work/opensource/xmlbuilder/xmlbuilder/src/test/TestXmlBuilder.java" title="TestXmlBuilder.java" tooltip="xmlbuilder/src/test/TestXmlBuilder.java" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TestXmlBuilder.java" partName="TestXmlBuilder.java" path="D:/Work/opensource/xmlbuilder/xmlbuilder/src/test/TestXmlBuilder.java" title="TestXmlBuilder.java" tooltip="xmlbuilder/src/test/TestXmlBuilder.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/xmlbuilder/src/test/TestXmlBuilder.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1444" selectionTopPixel="902"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1574" selectionTopPixel="880"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="XMLBuilder.java" partName="XMLBuilder.java" path="D:/Work/opensource/xmlbuilder/xmlbuilder/src/cn/xml/XMLBuilder.java" title="XMLBuilder.java" tooltip="xmlbuilder/src/cn/xml/XMLBuilder.java" workbook="DefaultEditorWorkbook">
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="XMLBuilder.java" partName="XMLBuilder.java" path="D:/Work/opensource/xmlbuilder/xmlbuilder/src/cn/xml/XMLBuilder.java" title="XMLBuilder.java" tooltip="xmlbuilder/src/cn/xml/XMLBuilder.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/xmlbuilder/src/cn/xml/XMLBuilder.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2319" selectionTopPixel="1320"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="9482" selectionTopPixel="5984"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TempletParser.java" partName="TempletParser.java" path="D:/Work/opensource/xmlbuilder/xmlbuilder/src/cn/xml/TempletParser.java" title="TempletParser.java" tooltip="xmlbuilder/src/cn/xml/TempletParser.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/xmlbuilder/src/cn/xml/TempletParser.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="16" selectionOffset="985" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TempletException.java" partName="TempletException.java" path="D:/Work/opensource/xmlbuilder/xmlbuilder/src/cn/xml/TempletException.java" title="TempletException.java" tooltip="xmlbuilder/src/cn/xml/TempletException.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/xmlbuilder/src/cn/xml/TempletException.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="210" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AttributeType.java" partName="AttributeType.java" path="D:/Work/opensource/xmlbuilder/xmlbuilder/src/cn/xml/AttributeType.java" title="AttributeType.java" tooltip="xmlbuilder/src/cn/xml/AttributeType.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/xmlbuilder/src/cn/xml/AttributeType.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="98" selectionTopPixel="0"/>
 </editor>
 </editors>
 <views>
@@ -547,46 +557,14 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/xmlbuilder/src/cn/xml/XMLBuilder.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/xmlbuilder/src/test/People.xml"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/xmlbuilder/src/test/China.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/xmlbuilder/src/test/China.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/xmlbuilder/src/cn/xml/builders/TempletParser.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/xmlbuilder/src/cn/xml/TempletParser.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/xmlbuilder/src/cn/xml/TempletException.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/xmlbuilder/src/cn/xml/ObjectAttributeResult.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/xmlbuilder/src/cn/xml/AttributeType.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/xmlbuilder/src/cn/xml/XMLBuilder.java"/>
 </editors>
-<item historyLabel="XMLBuilder.java" index="0">
-<position info="not_deleted" x="4359" y="14"/>
-</item>
-<item historyLabel="XMLBuilder.java" index="0">
-<position info="not_deleted" x="5238" y="0"/>
-</item>
-<item historyLabel="XMLBuilder.java" index="0">
-<position info="not_deleted" x="4804" y="0"/>
-</item>
-<item historyLabel="XMLBuilder.java" index="0">
-<position/>
-</item>
-<item historyLabel="XMLBuilder.java" index="0">
-<position info="not_deleted" x="4582" y="7"/>
-</item>
-<item historyLabel="XMLBuilder.java" index="0">
-<position info="not_deleted" x="4510" y="0"/>
-</item>
-<item historyLabel="XMLBuilder.java" index="0">
-<position info="not_deleted" x="5136" y="0"/>
-</item>
-<item historyLabel="XMLBuilder.java" index="0">
-<position info="not_deleted" x="5306" y="0"/>
-</item>
-<item historyLabel="XMLBuilder.java" index="0">
-<position info="not_deleted" x="5648" y="18"/>
-</item>
-<item historyLabel="XMLBuilder.java" index="0">
-<position info="not_deleted" x="2561" y="0"/>
-</item>
-<item historyLabel="XMLBuilder.java" index="0">
-<position info="not_deleted" x="2308" y="0"/>
-</item>
-<item historyLabel="XMLBuilder.java" index="0">
-<position info="not_deleted" x="1426" y="0"/>
-</item>
-<item historyLabel="XMLBuilder.java" index="0">
-<position info="not_deleted" x="2941" y="14"/>
-</item>
 <item historyLabel="XMLBuilder.java" index="0">
 <position info="not_deleted" x="5307" y="0"/>
 </item>
@@ -685,8 +663,43 @@
 <item historyLabel="XMLBuilder.java" index="3">
 <position info="not_deleted" x="2319" y="0"/>
 </item>
-<item active="true" historyLabel="TestXmlBuilder.java" index="2">
+<item historyLabel="TestXmlBuilder.java" index="2">
 <position info="not_deleted" x="1304" y="0"/>
+</item>
+<item historyLabel="China.xml" index="6"/>
+<item historyLabel="TestXmlBuilder.java" index="2">
+<position info="not_deleted" x="1420" y="0"/>
+</item>
+<item historyLabel="TempletParser.java" index="7">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="TestXmlBuilder.java" index="2">
+<position info="not_deleted" x="1574" y="0"/>
+</item>
+<item historyLabel="TempletParser.java" index="8">
+<position info="not_deleted" x="985" y="16"/>
+</item>
+<item historyLabel="TempletException.java" index="9">
+<position info="not_deleted" x="210" y="0"/>
+</item>
+<item historyLabel="ObjectAttributeResult.java" index="10">
+<position info="not_deleted" x="235" y="0"/>
+</item>
+<item historyLabel="China.xml" index="6"/>
+<item historyLabel="ObjectAttributeResult.java" index="10">
+<position info="not_deleted" x="196" y="0"/>
+</item>
+<item historyLabel="AttributeType.java" index="11">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="XMLBuilder.java" index="12">
+<position info="not_deleted" x="13030" y="0"/>
+</item>
+<item historyLabel="ObjectAttributeResult.java" index="10">
+<position info="not_deleted" x="148" y="21"/>
+</item>
+<item active="true" historyLabel="XMLBuilder.java" index="12">
+<position info="not_deleted" x="13030" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -694,9 +707,6 @@
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 <trimLayout>
-<trimArea IMemento.internal.id="16384">
-<trimItem IMemento.internal.id="left"/>
-</trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
 <trimItem IMemento.internal.id="org.eclipse.mylyn.tasks.ui.trim.container"/>
@@ -705,13 +715,24 @@
 <trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
 <trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
-<trimItem IMemento.internal.id="bottom"/>
 </trimArea>
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AttributeType.java" tooltip="xmlbuilder/src/cn/xml/AttributeType.java">
+<persistable path="/xmlbuilder/src/cn/xml/AttributeType.java"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="China.xml" tooltip="xmlbuilder/src/test/China.xml">
 <persistable path="/xmlbuilder/src/test/China.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ObjectAttributeResult.java" tooltip="xmlbuilder/src/cn/xml/ObjectAttributeResult.java">
+<persistable path="/xmlbuilder/src/cn/xml/ObjectAttributeResult.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TempletException.java" tooltip="xmlbuilder/src/cn/xml/TempletException.java">
+<persistable path="/xmlbuilder/src/cn/xml/TempletException.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TempletParser.java" tooltip="xmlbuilder/src/cn/xml/TempletParser.java">
+<persistable path="/xmlbuilder/src/cn/xml/TempletParser.java"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" tooltip="testandr/AndroidManifest.xml">
 <persistable path="/testandr/AndroidManifest.xml"/>
@@ -742,18 +763,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ObjectAttributeResult.java" tooltip="xmlbuilder/src/cn/xml/builders/ObjectAttributeResult.java">
 <persistable path="/xmlbuilder/src/cn/xml/builders/ObjectAttributeResult.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="NodeType.java" tooltip="xmlbuilder/src/cn/xml/builders/NodeType.java">
-<persistable path="/xmlbuilder/src/cn/xml/builders/NodeType.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AttributeType.java" tooltip="xmlbuilder/src/cn/xml/builders/AttributeType.java">
-<persistable path="/xmlbuilder/src/cn/xml/builders/AttributeType.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="China.java" tooltip="xmlbuilder/src/test/China.java">
-<persistable path="/xmlbuilder/src/test/China.java"/>
-</file>
-<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="net.sf.jadclipse.JadclipseClassFileEditor" name="Class.class" tooltip="java.lang.Class">
-<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=xmlbuilder/D:\/Tool\/jdk\/jdk7-64\/jre\/lib\/rt.jar&lt;java.lang(Class.class"/>
 </file>
 </mruList>
 </workbench>
