@@ -2,7 +2,6 @@ package cn.xml;
 
 import java.io.File;
 import java.lang.reflect.Field;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
@@ -26,7 +25,7 @@ public class XMLBuilder {
 	
 	private TempletParser parser = new TempletParser();
 	
-	private String xmlEncoding = System.getProperty("file.encoding");
+	private String xmlEncoding = "UTF-8";
 	
 	/**
 	 * 将数据实例集datas转换成xml字符串，注意：PREFIX_OBJECT节点不可作为根节点
@@ -201,8 +200,8 @@ public class XMLBuilder {
 						memoe.setText(text);
 					}
 					
-					Object memData =
-							parseMemObjectAttribute(memoe, childElement.attributes(), data);
+					Object memData = parseMemObjectAttribute(
+							memoe, childElement.attributes(), data);
 					
 					if (null != memData) {
 						parseObjectElement(memoe, childElement.elements(), memData);
@@ -223,7 +222,7 @@ public class XMLBuilder {
 								}
 								
 								setElementAttribute(memoesi, result.getAttrMap());
-								setElementTextValue(memoesi, result.getTextValue());
+								setElementTextValue(memoesi, result.getTextValues());
 								parseObjectElement(memoesi, childElement.elements(), memData);
 							}
 						} else if (result.getData() instanceof Object[]) {
@@ -236,7 +235,7 @@ public class XMLBuilder {
 								}
 								
 								setElementAttribute(memoesi, result.getAttrMap());
-								setElementTextValue(memoesi, result.getTextValue());
+								setElementTextValue(memoesi, result.getTextValues());
 								parseObjectElement(memoesi, childElement.elements(), memData);
 							}
 						}
@@ -248,7 +247,7 @@ public class XMLBuilder {
 						}
 						
 						setElementAttribute(memoesi, result.getAttrMap());
-						setElementTextValue(memoesi, result.getTextValue());
+						setElementTextValue(memoesi, result.getTextValues());
 					}
 				} else {
 					Element objChildElement = objectElement.addElement(childElement.getName());
@@ -286,7 +285,7 @@ public class XMLBuilder {
 	 * @throws TempletException
 	 * @throws NoSuchFieldException
 	 */
-	@SuppressWarnings({ "rawtypes" })
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	private ObjectAttributeResult parseMemObjectAttribute(
 			List<Attribute> attributes, Object data) throws  
 			IllegalAccessException, TempletException, NoSuchFieldException {
@@ -294,20 +293,22 @@ public class XMLBuilder {
 		ObjectAttributeResult result = new ObjectAttributeResult();
 		Object memData = null;
 		Map<String, String> attrMap = new HashMap<String, String>();
-		Collection textValues = null;
+		Object[] textValues = null;
 		
 		if (null != attributes && attributes.size() > 0) {
 			for (Attribute attr : attributes) {
 				AttributeType attrType = parser.getAttributeType(attr.getName());
 				if (AttributeType.TEXT_VALUE == attrType) {
-					Object textValue = getAttrValue(data, attr);
-					if (null != textValue) {
-						if (textValue instanceof Collection) {
-							textValues = (Collection) textValue;
-						} else if (textValue instanceof Object[]) {
-							textValues = Arrays.asList( (Object[]) textValue); 
+					Object attrValue = getAttrValue(data, attr);
+					if (null != attrValue) {
+						if (attrValue instanceof Collection) {
+							Collection attrValues = (Collection) attrValue;
+							textValues = new Object[attrValues.size()];
+							textValues = attrValues.toArray(textValues);
+						} else if (attrValue instanceof Object[]) {
+							textValues = (Object[]) attrValue;
 						} else {
-							textValues = Arrays.asList(textValue);
+							textValues = new Object[] {attrValue};
 						}
 					}
 				} else if (AttributeType.PREFIX_ATTRIBUTE == attrType) {
@@ -327,7 +328,7 @@ public class XMLBuilder {
 		
 		result.setAttrMap(attrMap);
 		result.setData(memData);
-		result.setTextValue(textValues);
+		result.setTextValues(textValues);
 		
 		return result;
 	}
@@ -409,24 +410,25 @@ public class XMLBuilder {
 	 * @throws TempletException
 	 * @throws NoSuchFieldException
 	 */
-	@SuppressWarnings("rawtypes")
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	private void setElementTextValue(Element element, 
 			Attribute textValueAttr, Object data) throws
 			IllegalAccessException, TempletException, NoSuchFieldException {
 		
-		Object textValue = getAttrValue(data, textValueAttr);
-		if (null != textValue) {
-			if (textValue instanceof Collection) {
-				Collection textValues = (Collection) textValue;
-				setElementTextValue(element, textValues);
-			} else if (textValue instanceof Object[]) {
-				Object[] textValues = (Object[]) textValue;
+		Object attrValue = getAttrValue(data, textValueAttr);
+		if (null != attrValue) {
+			if (attrValue instanceof Collection) {
+				Collection attrValues = (Collection) attrValue;
+				Object[] textValues = new Object[attrValues.size()];
+				setElementTextValue(element, attrValues.toArray(textValues));
+			} else if (attrValue instanceof Object[]) {
+				Object[] textValues = (Object[]) attrValue;
 				setElementTextValue(element, textValues);
 			} else {
 				if (null != element.getText() && !"".equals(element.getText())) {
-					element.setText(element.getText() + textValue);
+					element.setText(element.getText() + attrValue);
 				} else {
-					element.setText(textValue + "");
+					element.setText(attrValue + "");
 				}
 			}
 		}
@@ -438,7 +440,7 @@ public class XMLBuilder {
 	 * @param textValues
 	 */
 	private void setElementTextValue(
-			Element element, Object...textValues) {
+			Element element, Object[] textValues) {
 		
 		if (null != textValues && textValues.length > 0) {
 			String ttext = element.getText();
