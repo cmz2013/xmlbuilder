@@ -25,7 +25,7 @@ public class XMLBuilder {
 	
 	private TempletParser parser = new TempletParser();
 	
-	private String xmlEncoding = "UTF-8";
+	private String encoding = "UTF-8";
 	
 	/**
 	 * 将数据实例集datas转换成xml字符串，注意：PREFIX_OBJECT节点不可作为根节点
@@ -44,7 +44,7 @@ public class XMLBuilder {
 		
 		oni = 0;
 		Document newDoc = DocumentHelper.createDocument();
-		newDoc.setXMLEncoding(xmlEncoding);
+		newDoc.setXMLEncoding(encoding);
 		Document templateDoc = parser.parse(templet);
 		
 		Element tRootNode = templateDoc.getRootElement();
@@ -73,7 +73,7 @@ public class XMLBuilder {
 	@SuppressWarnings({ "unchecked"})
 	public String build(File templet, Object data) throws Exception {
 		Document newDoc = DocumentHelper.createDocument();
-		newDoc.setXMLEncoding(xmlEncoding);
+		newDoc.setXMLEncoding(encoding);
 		Document templateDoc = parser.parse(templet);
 		
 		Element tRootNode = templateDoc.getRootElement();
@@ -535,12 +535,12 @@ public class XMLBuilder {
 		return newNode;
 	}
 
-	public String getXmlEncoding() {
-		return xmlEncoding;
+	public String getEncoding() {
+		return encoding;
 	}
 
-	public void setXmlEncoding(String xmlEncoding) {
-		this.xmlEncoding = xmlEncoding;
+	public void setEncoding(String encoding) {
+		this.encoding = encoding;
 	}
 	
 }

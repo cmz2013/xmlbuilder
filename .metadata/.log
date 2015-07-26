@@ -1828,3 +1828,33 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.e
 
 !ENTRY jp.gr.java_conf.ussiy.app.propedit 1 0 2015-05-15 16:50:26.349
 !MESSAGE properties loading 'xmlbuilder'
+!SESSION 2015-06-02 17:34:17.827 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.7.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=zh_CN
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY jp.gr.java_conf.ussiy.app.propedit 1 0 2015-06-02 17:35:00.524
+!MESSAGE properties loading 'xmlbuilder'
+!SESSION 2015-06-04 14:59:58.803 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.7.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=zh_CN
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY jp.gr.java_conf.ussiy.app.propedit 1 0 2015-06-04 15:00:14.138
+!MESSAGE properties loading 'xmlbuilder'
+!SESSION 2015-06-19 15:15:12.482 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.7.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=zh_CN
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY jp.gr.java_conf.ussiy.app.propedit 1 0 2015-06-19 15:15:25.131
+!MESSAGE properties loading 'xmlbuilder'
