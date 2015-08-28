@@ -7,4 +7,8 @@ public class TempletException extends Exception {
 	public TempletException (String message) {
 		super(message);
 	}
+	
+	public TempletException (Exception e) {
+		super(e);
+	}
 }

@@ -8,10 +8,6 @@ package cn.xml;
 public enum NodeType {
 	NORMAL, 
 	/*
-	 * 节点名称以"memobjects_"为前缀
-	 */
-	PREFIX_MEMOBJECTS, 
-	/*
 	 * 节点名称以"memobject_"为前缀
 	 */
 	PREFIX_MEMOBJECT, 

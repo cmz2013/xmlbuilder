@@ -13,7 +13,7 @@ public class ObjectAttributeResult {
 	private Map<String, String> attrMap;
 	
 	// 属性object_data对应的数据
-	private Object data;
+	private Object objectData;
 
 	// 属性text_value值
 	private Object[] textValues;
@@ -26,12 +26,12 @@ public class ObjectAttributeResult {
 		this.attrMap = attrMap;
 	}
 
-	public Object getData() {
-		return data;
+	public Object getObjectData() {
+		return objectData;
 	}
 
-	public void setData(Object data) {
-		this.data = data;
+	public void setObjectData(Object objectData) {
+		this.objectData = objectData;
 	}
 
 	public Object[] getTextValues() {

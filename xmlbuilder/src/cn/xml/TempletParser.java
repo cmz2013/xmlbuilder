@@ -3,7 +3,6 @@ package cn.xml;
 import java.io.File;
 
 import org.dom4j.Document;
-import org.dom4j.DocumentException;
 import org.dom4j.io.SAXReader;
 
 /**
@@ -18,11 +17,15 @@ public class TempletParser {
 	 * 返回模板对应的Document实例
 	 * @param templet
 	 * @return
-	 * @throws DocumentException 
+	 * @throws TempletException 
 	 */
-	public Document parse(File templet) throws DocumentException  {
-		SAXReader reader = new SAXReader();
-        return reader.read(templet);
+	public Document parse(File templet) throws TempletException  {
+		try {
+			SAXReader reader = new SAXReader();
+	        return reader.read(templet);
+		} catch (Exception e) {
+			throw new TempletException(e);
+		}
 	}
 	
 	/**
@@ -33,8 +36,6 @@ public class TempletParser {
 	public NodeType getNodeType(String nodeName) {
 		if (nodeName.startsWith("object_")) {
 			return NodeType.PREFIX_OBJECT;
-		} else if (nodeName.startsWith("memobjects_")) {
-			return NodeType.PREFIX_MEMOBJECTS;
 		} else if (nodeName.startsWith("memobject_")) {
 			return NodeType.PREFIX_MEMOBJECT;
 		} else {

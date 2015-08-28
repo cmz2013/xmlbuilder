@@ -1,10 +1,12 @@
 package test;
 
+import java.util.List;
+
 public class People {
 	private String name;
 	private int age;
 	private String sex;
-	private Address address;
+	private List<Address> addressList;
 	
 	public String getName() {
 		return name;
@@ -24,10 +26,10 @@ public class People {
 	public void setSex(String sex) {
 		this.sex = sex;
 	}
-	public Address getAddress() {
-		return address;
+	public List<Address> getAddressList() {
+		return addressList;
 	}
-	public void setAddress(Address address) {
-		this.address = address;
+	public void setAddressList(List<Address> addressList) {
+		this.addressList = addressList;
 	}
 }

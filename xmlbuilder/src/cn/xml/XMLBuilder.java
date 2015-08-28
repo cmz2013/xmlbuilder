@@ -9,7 +9,6 @@ import java.util.Map;
 
 import org.dom4j.Attribute;
 import org.dom4j.Document;
-import org.dom4j.DocumentException;
 import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
 
@@ -33,14 +32,10 @@ public class XMLBuilder {
 	 * @param templet
 	 * @param datas
 	 * @return
-	 * @throws DocumentException
-	 * @throws IllegalAccessException
 	 * @throws TempletException
-	 * @throws NoSuchFieldException
 	 */
 	@SuppressWarnings({ "unchecked", "rawtypes"})
-	public String build(File templet, Collection[] datas) throws DocumentException, 
-				IllegalAccessException, TempletException, NoSuchFieldException {
+	public String build(File templet, Collection[] datas) throws TempletException {
 		
 		oni = 0;
 		Document newDoc = DocumentHelper.createDocument();
@@ -99,14 +94,11 @@ public class XMLBuilder {
 	 * @param newNode
 	 * @param elements
 	 * @param datas
-	 * @throws IllegalAccessException
 	 * @throws TempletException
-	 * @throws NoSuchFieldException
 	 */
 	@SuppressWarnings({ "unchecked"})
-	private void buildChildNode(Element newNode, 
-			List<Element> elements, Collection<Object>[]  datas) throws
-			IllegalAccessException, TempletException, NoSuchFieldException {
+	private void buildChildNode(Element newNode, List<Element> elements, 
+			Collection<Object>[]  datas) throws TempletException {
 		
 		if (null != elements && elements.size() > 0) {
 			for (Element element : elements) {
@@ -142,14 +134,11 @@ public class XMLBuilder {
 	 * @param newNode
 	 * @param elements
 	 * @param data
-	 * @throws IllegalAccessException
 	 * @throws TempletException
-	 * @throws NoSuchFieldException
 	 */
 	@SuppressWarnings({ "unchecked" })
 	private void buildChildNode(Element newNode, 
-			List<Element> elements, Object  data) throws 
-			IllegalAccessException, TempletException, NoSuchFieldException {
+			List<Element> elements, Object  data) throws TempletException {
 		
 		if (null != elements && elements.size() > 0) {
 			for (Element element : elements) {
@@ -179,68 +168,36 @@ public class XMLBuilder {
 	 * @param objectElement
 	 * @param childElements
 	 * @param data
-	 * @throws IllegalAccessException
 	 * @throws TempletException
-	 * @throws NoSuchFieldException
 	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	private void parseObjectElement(
-			Element objectElement, List<Element> childElements, Object data) throws 
-			IllegalAccessException, TempletException, NoSuchFieldException {
+	private void parseObjectElement(Element objectElement, 
+			List<Element> childElements, Object data) throws TempletException {
 		
 		if (null != childElements && childElements.size() > 0) {
 			for (Element childElement : childElements) {
 				NodeType elementType = parser.getNodeType(childElement.getName());
 				
-				if (NodeType.PREFIX_MEMOBJECT== elementType) {
-					String memoName = childElement.getName().substring(10);
-					Element memoe = objectElement.addElement(memoName);
-					String text = childElement.getText();
-					if (null != text && !"".equals(text = text.trim())) {
-						memoe.setText(text);
-					}
-					
-					Object memData = parseMemObjectAttribute(
-							memoe, childElement.attributes(), data);
-					
-					if (null != memData) {
-						parseObjectElement(memoe, childElement.elements(), memData);
-					}
-				} else if (NodeType.PREFIX_MEMOBJECTS == elementType) {
-					String memosName = childElement.getName().substring(11);
+				if (NodeType.PREFIX_MEMOBJECT == elementType) {
 					ObjectAttributeResult result = 
 							parseMemObjectAttribute(childElement.attributes(), data);
 					
-					if (null != result.getData()) {
-						if (result.getData() instanceof Collection) {
-							Collection datas = (Collection) result.getData();
+					if (null != result.getObjectData()) {
+						if (result.getObjectData() instanceof Collection) {
+							Collection datas = (Collection) result.getObjectData();
 							for (Object memData : datas) {
-								Element memoesi = objectElement.addElement(memosName);
-								String text = childElement.getText();
-								if (null != text && !"".equals(text = text.trim())) {
-									memoesi.setText(text);
-								}
-								
-								setElementAttribute(memoesi, result.getAttrMap());
-								setElementTextValue(memoesi, result.getTextValues());
-								parseObjectElement(memoesi, childElement.elements(), memData);
+								addMemObjectElement(objectElement, childElement, result, memData);
 							}
-						} else if (result.getData() instanceof Object[]) {
-							Object[] datas = (Object[]) result.getData();
+						} else if (result.getObjectData() instanceof Object[]) {
+							Object[] datas = (Object[]) result.getObjectData();
 							for (Object memData : datas) {
-								Element memoesi = objectElement.addElement(memosName);
-								String text = childElement.getText();
-								if (null != text && !"".equals(text = text.trim())) {
-									memoesi.setText(text);
-								}
-								
-								setElementAttribute(memoesi, result.getAttrMap());
-								setElementTextValue(memoesi, result.getTextValues());
-								parseObjectElement(memoesi, childElement.elements(), memData);
+								addMemObjectElement(objectElement, childElement, result, memData);
 							}
+						} else {
+							addMemObjectElement(objectElement, childElement, result, result.getObjectData());
 						}
 					} else {
-						Element memoesi = objectElement.addElement(memosName);
+						Element memoesi = objectElement.addElement(childElement.getName().substring(10));
 						String text = childElement.getText();
 						if (null != text && !"".equals(text = text.trim())) {
 							memoesi.setText(text);
@@ -264,6 +221,29 @@ public class XMLBuilder {
 	}
 
 	/**
+	 * 
+	 * @param objectElement
+	 * @param childElement
+	 * @param result
+	 * @param memData
+	 * @throws TempletException
+	 */
+	@SuppressWarnings("unchecked")
+	private void addMemObjectElement(Element objectElement, Element childElement,
+			ObjectAttributeResult result, Object memData)
+			throws TempletException {
+		Element memoe = objectElement.addElement(childElement.getName().substring(10));
+		String text = childElement.getText();
+		if (null != text && !"".equals(text = text.trim())) {
+			memoe.setText(text);
+		}
+		
+		setElementTextValue(memoe, result.getTextValues());
+		setElementAttribute(memoe, result.getAttrMap());
+		parseObjectElement(memoe, childElement.elements(), memData);
+	}
+
+	/**
 	 * 设置节点属性
 	 * @param element
 	 * @param attrMap
@@ -281,14 +261,11 @@ public class XMLBuilder {
 	 * @param attributes
 	 * @param data
 	 * @return
-	 * @throws IllegalAccessException
 	 * @throws TempletException
-	 * @throws NoSuchFieldException
 	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	private ObjectAttributeResult parseMemObjectAttribute(
-			List<Attribute> attributes, Object data) throws  
-			IllegalAccessException, TempletException, NoSuchFieldException {
+			List<Attribute> attributes, Object data) throws TempletException {
 		
 		ObjectAttributeResult result = new ObjectAttributeResult();
 		Object memData = null;
@@ -327,48 +304,10 @@ public class XMLBuilder {
 		}
 		
 		result.setAttrMap(attrMap);
-		result.setData(memData);
+		result.setObjectData(memData);
 		result.setTextValues(textValues);
 		
 		return result;
-	}
-
-	/**
-	 * 解析memobject节点的属性
-	 * @param memoe
-	 * @param attributes
-	 * @param data
-	 * @return
-	 * @throws IllegalAccessException
-	 * @throws TempletException
-	 * @throws NoSuchFieldException
-	 */
-	@SuppressWarnings("unchecked")
-	private Object parseMemObjectAttribute(
-			Element memoe, List<Attribute> attributes, Object data) throws 
-			IllegalAccessException, TempletException, NoSuchFieldException {
-		
-		Object memData = null;
-		if (null != attributes && attributes.size() > 0) {
-			for (Attribute attr : attributes) {
-				AttributeType attrType = parser.getAttributeType(attr.getName());
-				if (AttributeType.TEXT_VALUE == attrType) {
-					setElementTextValue(memoe, attr, data);
-				} else if (AttributeType.PREFIX_ATTRIBUTE == attrType) {
-					String attrName = attr.getName().substring(10);
-					Object value = getAttrValue(data, attr);
-					memoe.addAttribute(attrName, null ==  value ? "" : (value + ""));
-				} else if (AttributeType.OBJECT_DATA == attrType) {
-					List<Element> childElements = attr.getParent().elements();
-					if (null != childElements && childElements.size() > 0) {
-						memData = getAttrValue(data, attr);
-					}
-				} else {
-					memoe.addAttribute(attr.getName(), attr.getValue());
-				}
-			}
-		}
-		return memData;
 	}
 
 	/**
@@ -376,13 +315,10 @@ public class XMLBuilder {
 	 * @param objectElement
 	 * @param attributes
 	 * @param data
-	 * @throws IllegalAccessException
 	 * @throws TempletException
-	 * @throws NoSuchFieldException
 	 */
-	private void parseObjectAttribute(
-			Element objectElement, List<Attribute> attributes, Object data) throws 
-			IllegalAccessException, TempletException, NoSuchFieldException {
+	private void parseObjectAttribute(Element objectElement, 
+			List<Attribute> attributes, Object data) throws TempletException {
 		
 		if (null != attributes && attributes.size() > 0) {
 			for (Attribute attr : attributes) {
@@ -406,14 +342,11 @@ public class XMLBuilder {
 	 * @param element
 	 * @param textValueAttr
 	 * @param data
-	 * @throws IllegalAccessException
 	 * @throws TempletException
-	 * @throws NoSuchFieldException
 	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	private void setElementTextValue(Element element, 
-			Attribute textValueAttr, Object data) throws
-			IllegalAccessException, TempletException, NoSuchFieldException {
+			Attribute textValueAttr, Object data) throws TempletException {
 		
 		Object attrValue = getAttrValue(data, textValueAttr);
 		if (null != attrValue) {
@@ -471,30 +404,30 @@ public class XMLBuilder {
 	 * @param data
 	 * @param attr
 	 * @return
-	 * @throws IllegalAccessException
 	 * @throws TempletException
-	 * @throws NoSuchFieldException
 	 */
 	@SuppressWarnings({ "rawtypes" })
-	private Object getAttrValue(Object data, Attribute attr) throws 
-			 IllegalAccessException, TempletException, NoSuchFieldException {
+	private Object getAttrValue(Object data, Attribute attr) throws TempletException {
 		
 		String fieldName = attr.getValue();
 		if (null == fieldName || "".equals(fieldName = fieldName.trim())) {
-			throw new TempletException("The attribute value is null: " +
+			throw new TempletException("The field is null: " +
 					attr.getParent().getName() + "/" + attr.getName());
 		}
 		
-		Class clazz = data.getClass(); 
-		Field field = clazz.getDeclaredField(fieldName);
-		
-		if (field.isAccessible()) {
-			return  field.get(data);
-		} else {
-			field.setAccessible(true);
-			Object value =  field.get(data);
-			field.setAccessible(false);
-			return value;
+		try {
+			Class clazz = data.getClass(); 
+			Field field = clazz.getDeclaredField(fieldName);
+			if (field.isAccessible()) {
+				return  field.get(data);
+			} else {
+				field.setAccessible(true);
+				Object value =  field.get(data);
+				field.setAccessible(false);
+				return value;
+			}
+		} catch (Exception e) {
+			throw new TempletException(e);
 		}
 	}
 	

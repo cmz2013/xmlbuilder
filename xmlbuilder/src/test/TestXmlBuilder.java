@@ -30,7 +30,10 @@ public class TestXmlBuilder {
 			people.setAge(20 + i);
 			people.setName("people" + i);
 			people.setSex("ÄÐ");
-			people.setAddress(address);
+			List<Address> addressList = new ArrayList<Address>();
+			addressList.add(address);
+			addressList.add(address);
+			people.setAddressList(addressList);
 			peoples.add(people);
 		}
 		Collection[] datas = {peoples, peoples};
