@@ -1918,3 +1918,65 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.e
 
 !ENTRY com.android.ide.eclipse.adt 2 0 2015-08-28 19:37:35.291
 !MESSAGE No projects found for [D:\Work\opensource\xmlbuilder\xmlbuilder\src\test\People.xml]
+!SESSION 2015-08-30 06:27:26.114 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.7.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=zh_CN
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY jp.gr.java_conf.ussiy.app.propedit 1 0 2015-08-30 06:27:39.328
+!MESSAGE properties loading 'xmlbuilder'
+
+!ENTRY com.android.ide.eclipse.adt 1 0 2015-08-30 06:27:48.111
+!MESSAGE No valid Android XML Editor Delegate found for file /xmlbuilder/src/test/China.xml [Res null, type null]
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2015-08-30 06:28:10.949
+!MESSAGE No projects found for [D:\Work\opensource\xmlbuilder\xmlbuilder\src\test\China.xml]
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2015-08-30 06:29:52.240
+!MESSAGE No projects found for [D:\Work\opensource\xmlbuilder\xmlbuilder\src\test\China.xml]
+!SESSION 2015-08-31 10:33:14.348 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.7.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=zh_CN
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY jp.gr.java_conf.ussiy.app.propedit 1 0 2015-08-31 10:33:24.129
+!MESSAGE properties loading 'xmlbuilder'
+!SESSION 2015-08-31 10:41:50.615 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.7.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=zh_CN
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY jp.gr.java_conf.ussiy.app.propedit 1 0 2015-08-31 10:41:58.119
+!MESSAGE properties loading 'xmlbuilder'
+!SESSION 2015-08-31 11:24:53.413 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.7.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=zh_CN
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY jp.gr.java_conf.ussiy.app.propedit 1 0 2015-08-31 11:25:02.275
+!MESSAGE properties loading 'xmlbuilder'
+!SESSION 2015-09-04 18:39:16.606 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.7.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=zh_CN
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY jp.gr.java_conf.ussiy.app.propedit 1 0 2015-09-04 18:39:49.961
+!MESSAGE properties loading 'xmlbuilder'
+
+!ENTRY com.android.ide.eclipse.adt 1 0 2015-09-04 18:46:41.282
+!MESSAGE No valid Android XML Editor Delegate found for file /xmlbuilder/src/test/People.xml [Res null, type null]

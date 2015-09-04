@@ -1,7 +1,9 @@
 package cn.xml;
 
 import java.io.File;
+import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Field;
+import java.nio.charset.Charset;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
@@ -24,8 +26,6 @@ public class XMLBuilder {
 	
 	private TempletParser parser = new TempletParser();
 	
-	private String encoding = "UTF-8";
-	
 	/**
 	 * 将数据实例集datas转换成xml字符串，注意：PREFIX_OBJECT节点不可作为根节点
 	 * 
@@ -33,14 +33,16 @@ public class XMLBuilder {
 	 * @param datas
 	 * @return
 	 * @throws TempletException
+	 * @throws UnsupportedEncodingException 
 	 */
 	@SuppressWarnings({ "unchecked", "rawtypes"})
-	public String build(File templet, Collection[] datas) throws TempletException {
+	public String build(File templet, Collection[] datas) throws 
+		TempletException, UnsupportedEncodingException {
 		
 		oni = 0;
-		Document newDoc = DocumentHelper.createDocument();
-		newDoc.setXMLEncoding(encoding);
 		Document templateDoc = parser.parse(templet);
+		Document newDoc = DocumentHelper.createDocument();
+		newDoc.setXMLEncoding(templateDoc.getXMLEncoding());
 		
 		Element tRootNode = templateDoc.getRootElement();
 		NodeType rootType = parser.getNodeType(tRootNode.getName());
@@ -54,7 +56,8 @@ public class XMLBuilder {
 					) + "\" cannot serve as the root element, please check " + templet.getName());
 		}
 		
-		return newDoc.asXML();
+		return new String(newDoc.asXML().getBytes(templateDoc.getXMLEncoding()),
+				Charset.forName(templateDoc.getXMLEncoding()));
 	}	
 	
 	/**
@@ -63,13 +66,16 @@ public class XMLBuilder {
 	 * @param templet
 	 * @param data
 	 * @return
-	 * @throws Exception
+	 * @throws TempletException
+	 * @throws UnsupportedEncodingException 
 	 */
 	@SuppressWarnings({ "unchecked"})
-	public String build(File templet, Object data) throws Exception {
-		Document newDoc = DocumentHelper.createDocument();
-		newDoc.setXMLEncoding(encoding);
+	public String build(File templet, Object data) throws 
+		TempletException, UnsupportedEncodingException {
+		
 		Document templateDoc = parser.parse(templet);
+		Document newDoc = DocumentHelper.createDocument();
+		newDoc.setXMLEncoding(templateDoc.getXMLEncoding());
 		
 		Element tRootNode = templateDoc.getRootElement();
 		NodeType rootType = parser.getNodeType(tRootNode.getName());
@@ -86,7 +92,8 @@ public class XMLBuilder {
 		}
 		
 		newDoc.setRootElement(nRootNode);
-		return newDoc.asXML();
+		return new String(newDoc.asXML().getBytes(templateDoc.getXMLEncoding()),
+				Charset.forName(templateDoc.getXMLEncoding()));
 	}
 	
 	/**
@@ -466,14 +473,6 @@ public class XMLBuilder {
 		Element newNode = DocumentHelper.createElement(tnode.getName());
 		copyElement(tnode, newNode);
 		return newNode;
-	}
-
-	public String getEncoding() {
-		return encoding;
-	}
-
-	public void setEncoding(String encoding) {
-		this.encoding = encoding;
 	}
 	
 }

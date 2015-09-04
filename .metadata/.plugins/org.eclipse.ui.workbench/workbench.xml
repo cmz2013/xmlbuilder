@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workbench progressCount="33" version="2.0">
 <workbenchAdvisor/>
-<window height="728" width="676" x="642" y="0">
+<window height="728" maximized="true" width="676" x="642" y="0">
 <fastViewData fastViewLocation="1024"/>
 <perspectiveBar>
 <itemSize x="160"/>
 </perspectiveBar>
 <coolbarLayout>
 <coolItem id="group.file" itemType="typeGroupMarker"/>
-<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="183" y="22"/>
+<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="124" y="22"/>
 <coolItem id="additions" itemType="typeGroupMarker"/>
 <coolItem id="adt.actionSet.avdManager" itemType="typeToolBarContribution" x="61" y="22"/>
 <coolItem id="adt.actionSet.lint" itemType="typeToolBarContribution" x="55" y="22"/>
@@ -16,7 +16,7 @@
 <coolItem id="com.python.pydev.debug.actionSet" itemType="typeToolBarContribution" x="61" y="22"/>
 <coolItem id="com.python.pydev.navigate.actionSet" itemType="typeToolBarContribution" x="38" y="22"/>
 <coolItem id="com_sysdeo_eclipse_tomcat_actionSet" itemType="typeToolBarContribution" x="84" y="22"/>
-<coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="242" y="22"/>
+<coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="135" y="22"/>
 <coolItem id="org.eclipse.jdt.ui.JavaElementCreationActionSet" itemType="typeToolBarContribution" x="78" y="22"/>
 <coolItem id="org.eclipse.jst.j2ee.J2eeMainActionSet" itemType="typeToolBarContribution" x="95" y="22"/>
 <coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="101" y="22"/>
@@ -46,6 +46,8 @@
 <part id="3"/>
 <part id="4"/>
 <part id="5"/>
+<part id="6"/>
+<part id="7"/>
 </presentation>
 </folder>
 </info>
@@ -62,7 +64,7 @@
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/xmlbuilder/src/cn/xml/TempletException.java"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="206" selectionTopPixel="0"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TempletParser.java" partName="TempletParser.java" path="D:/Work/opensource/xmlbuilder/xmlbuilder/src/cn/xml/TempletParser.java" title="TempletParser.java" tooltip="xmlbuilder/src/cn/xml/TempletParser.java" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TempletParser.java" partName="TempletParser.java" path="D:/Work/opensource/xmlbuilder/xmlbuilder/src/cn/xml/TempletParser.java" title="TempletParser.java" tooltip="xmlbuilder/src/cn/xml/TempletParser.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/xmlbuilder/src/cn/xml/TempletParser.java"/>
 <editorState selectionHorizontalPixel="0" selectionLength="1307" selectionOffset="0" selectionTopPixel="220"/>
 </editor>
@@ -72,6 +74,14 @@
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="People.java" partName="People.java" path="D:/Work/opensource/xmlbuilder/xmlbuilder/src/test/People.java" title="People.java" tooltip="xmlbuilder/src/test/People.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/xmlbuilder/src/test/People.java"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="422" selectionTopPixel="220"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TestXmlBuilder.java" partName="TestXmlBuilder.java" path="D:/Work/opensource/xmlbuilder/xmlbuilder/src/test/TestXmlBuilder.java" title="TestXmlBuilder.java" tooltip="xmlbuilder/src/test/TestXmlBuilder.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/xmlbuilder/src/test/TestXmlBuilder.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1546" selectionTopPixel="773"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="XMLBuilder.java" partName="XMLBuilder.java" path="D:/Work/opensource/xmlbuilder/xmlbuilder/src/cn/xml/XMLBuilder.java" title="XMLBuilder.java" tooltip="xmlbuilder/src/cn/xml/XMLBuilder.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/xmlbuilder/src/cn/xml/XMLBuilder.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2945" selectionTopPixel="1738"/>
 </editor>
 </editors>
 <views>
@@ -164,7 +174,7 @@
 </view>
 <view id="org.eclipse.wst.server.ui.ServersView" partName="Servers"/>
 </views>
-<perspectives activePart="org.eclipse.jdt.ui.CompilationUnitEditor" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
+<perspectives activePart="org.eclipse.jdt.ui.PackageExplorer" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.jst.j2ee.internal.perspective.J2EEPerspective" id="org.eclipse.jst.j2ee.J2EEPerspective" label="Java EE"/>
 <alwaysOnActionSet id="org.eclipse.mylyn.context.ui.actionSet"/>
@@ -379,7 +389,7 @@
 </folder>
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.20073801" ratioLeft="272" ratioRight="1083" relationship="2" relative="left"/>
-<info folder="true" part="bottom" ratio="0.7447496" ratioLeft="461" ratioRight="158" relationship="4" relative="org.eclipse.ui.editorss">
+<info folder="true" part="bottom" ratio="0.7027464" ratioLeft="435" ratioRight="184" relationship="4" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
 <page content="org.eclipse.ui.views.ProblemView" label="LabelNotFound"/>
@@ -482,22 +492,31 @@
 <view id="org.eclipse.debug.ui.BreakpointView"/>
 <view id="org.eclipse.ui.views.ContentOutline"/>
 <fastViewBars/>
-<layout>&#x0A;<mainWindow>&#x0A;<info folder="true" part="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder activePageID="org.eclipse.debug.ui.DebugView" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.debug.ui.DebugView" label="Debug"/>
+<layout>
+<mainWindow>
+<info folder="true" part="org.eclipse.debug.internal.ui.NavigatorFolderView">
+<folder activePageID="org.eclipse.debug.ui.DebugView" appearance="2" expanded="2">
+<page content="org.eclipse.debug.ui.DebugView" label="Debug"/>
 <page content="org.eclipse.wst.server.ui.ServersView" label="Servers"/>
 <page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
 <page content="org.eclipse.jdt.ui.PackageExplorer" label="LabelNotFound"/>
 <page content="org.eclipse.jdt.ui.TypeHierarchy" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
 <part id="1"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="stickyFolderRight" ratio="0.7496318" ratioLeft="1018" ratioRight="340" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder appearance="2" expanded="2">&#x0A;<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<info folder="true" part="stickyFolderRight" ratio="0.7496318" ratioLeft="1018" ratioRight="340" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
 <page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.debug.internal.ui.ConsoleFolderView" ratio="0.76898223" ratioLeft="476" ratioRight="143" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<info folder="true" part="org.eclipse.debug.internal.ui.ConsoleFolderView" ratio="0.76898223" ratioLeft="476" ratioRight="143" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">
+<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
+<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
 <page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
 <page content="org.eclipse.cdt.debug.ui.executablesView" label="Executables"/>
@@ -507,33 +526,42 @@
 <page content="org.eclipse.jdt.debug.ui.DisplayView" label="LabelNotFound"/>
 <page content="org.eclipse.search.SearchResultView" label="LabelNotFound"/>
 <page content="org.eclipse.wst.xsl.jaxp.debug.ui.view1" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
 <part id="1"/>
 <part id="2"/>
 <part id="3"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@11ce0b80" ratio="0.5" ratioLeft="679" ratioRight="679" relationship="2" relative="org.eclipse.debug.internal.ui.ConsoleFolderView">&#x0A;<folder appearance="2" expanded="2">&#x0A;<page content="com.android.ide.eclipse.ddms.views.LogCatView" label="LabelNotFound"/>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@11ce0b80" ratio="0.5" ratioLeft="679" ratioRight="679" relationship="2" relative="org.eclipse.debug.internal.ui.ConsoleFolderView">
+<folder appearance="2" expanded="2">
+<page content="com.android.ide.eclipse.ddms.views.LogCatView" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.35306555" ratioLeft="167" ratioRight="306" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView"/>
-<info folder="true" part="org.eclipse.debug.internal.ui.OutlineFolderView" ratio="0.7496318" ratioLeft="1018" ratioRight="340" relationship="2" relative="org.eclipse.ui.editorss">&#x0A;<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<info folder="true" part="org.eclipse.debug.internal.ui.OutlineFolderView" ratio="0.7496318" ratioLeft="1018" ratioRight="340" relationship="2" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
 <page content="org.eclipse.ant.ui.views.AntView" label="LabelNotFound"/>
 <page content="org.eclipse.cdt.dsf.gdb.ui.tracecontrol.view" label="LabelNotFound"/>
 <page content="org.eclipse.cdt.dsf.debug.ui.disassembly.view" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.debug.internal.ui.ToolsFolderView" ratio="0.5" ratioLeft="679" ratioRight="679" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder activePageID="org.eclipse.debug.ui.VariableView" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.debug.ui.VariableView" label="Variables"/>
+<info folder="true" part="org.eclipse.debug.internal.ui.ToolsFolderView" ratio="0.5" ratioLeft="679" ratioRight="679" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">
+<folder activePageID="org.eclipse.debug.ui.VariableView" appearance="2" expanded="2">
+<page content="org.eclipse.debug.ui.VariableView" label="Variables"/>
 <page content="org.eclipse.debug.ui.BreakpointView" label="Breakpoints"/>
 <page content="org.eclipse.debug.ui.ExpressionView" label="LabelNotFound"/>
 <page content="org.eclipse.debug.ui.RegisterView" label="LabelNotFound"/>
 <page content="org.eclipse.cdt.debug.ui.SignalsView" label="LabelNotFound"/>
 <page content="org.eclipse.debug.ui.ModuleView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
 <part id="1"/>
 </presentation>
 </folder>
@@ -545,155 +573,158 @@
 <workingSets/>
 <navigationHistory>
 <editors>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/xmlbuilder/src/cn/xml/TempletParser.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/xmlbuilder/src/test/China.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/xmlbuilder/src/test/TestXmlBuilder.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/xmlbuilder/src/cn/xml/XMLBuilder.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/xmlbuilder/src/cn/xml/XMLBuilder.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/xmlbuilder/src/test/TestXmlBuilder.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/xmlbuilder/src/test/TestXmlBuilder.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/xmlbuilder/src/test/People.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/xmlbuilder/src/test/People.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/xmlbuilder/src/cn/xml/TempletParser.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/xmlbuilder/src/cn/xml/TempletException.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/xmlbuilder/src/test/People.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/xmlbuilder/src/cn/xml/XMLBuilder.java"/>
 </editors>
-<item historyLabel="People.java" index="2">
-<position info="not_deleted" x="564" y="10"/>
+<item historyLabel="TempletParser.java" index="0">
+<position info="not_deleted" x="223" y="0"/>
 </item>
-<item historyLabel="People.java" index="2">
-<position info="not_deleted" x="151" y="0"/>
+<item historyLabel="China.xml" index="1"/>
+<item historyLabel="TestXmlBuilder.java" index="2">
+<position info="not_deleted" x="1225" y="0"/>
 </item>
-<item historyLabel="People.java" index="2">
-<position info="not_deleted" x="139" y="4"/>
+<item historyLabel="China.xml" index="1"/>
+<item historyLabel="TestXmlBuilder.java" index="2">
+<position info="not_deleted" x="1225" y="0"/>
 </item>
-<item historyLabel="People.java" index="2">
-<position info="not_deleted" x="592" y="0"/>
+<item historyLabel="XMLBuilder.java" index="3">
+<position info="not_deleted" x="1606" y="0"/>
 </item>
-<item historyLabel="TestXmlBuilder.java" index="0">
-<position info="not_deleted" x="970" y="0"/>
+<item historyLabel="TestXmlBuilder.java" index="2">
+<position info="not_deleted" x="1196" y="0"/>
 </item>
-<item historyLabel="TestXmlBuilder.java" index="0">
-<position info="not_deleted" x="899" y="0"/>
+<item historyLabel="XMLBuilder.java" index="4">
+<position info="not_deleted" x="1606" y="0"/>
 </item>
-<item historyLabel="TestXmlBuilder.java" index="0">
-<position info="not_deleted" x="889" y="0"/>
-</item>
-<item historyLabel="TestXmlBuilder.java" index="0">
-<position info="not_deleted" x="969" y="0"/>
-</item>
-<item historyLabel="People.java" index="2">
-<position info="not_deleted" x="564" y="10"/>
-</item>
-<item historyLabel="People.java" index="2">
+<item historyLabel="XMLBuilder.java" index="4">
 <position/>
 </item>
-<item historyLabel="People.java" index="2">
-<position info="not_deleted" x="422" y="0"/>
+<item historyLabel="XMLBuilder.java" index="4">
+<position info="not_deleted" x="2487" y="0"/>
 </item>
-<item historyLabel="TestXmlBuilder.java" index="0">
-<position info="not_deleted" x="669" y="0"/>
+<item historyLabel="XMLBuilder.java" index="4">
+<position info="not_deleted" x="1723" y="0"/>
 </item>
-<item historyLabel="People.xml" index="1"/>
-<item historyLabel="TestXmlBuilder.java" index="0">
-<position info="not_deleted" x="557" y="0"/>
+<item historyLabel="TestXmlBuilder.java" index="2">
+<position info="not_deleted" x="1430" y="0"/>
 </item>
-<item historyLabel="People.xml" index="1"/>
-<item historyLabel="TestXmlBuilder.java" index="0">
-<position info="not_deleted" x="521" y="0"/>
+<item historyLabel="TestXmlBuilder.java" index="2">
+<position info="not_deleted" x="1691" y="0"/>
 </item>
-<item historyLabel="TempletParser.java" index="3">
-<position info="not_deleted" x="790" y="0"/>
-</item>
-<item historyLabel="TempletParser.java" index="3">
-<position info="not_deleted" x="446" y="0"/>
-</item>
-<item historyLabel="TempletParser.java" index="3">
+<item historyLabel="TestXmlBuilder.java" index="2">
 <position/>
 </item>
-<item historyLabel="TempletException.java" index="4">
-<position info="not_deleted" x="206" y="0"/>
+<item historyLabel="TestXmlBuilder.java" index="2">
+<position info="not_deleted" x="1668" y="0"/>
 </item>
-<item historyLabel="TempletException.java" index="4">
-<position info="not_deleted" x="206" y="0"/>
+<item historyLabel="XMLBuilder.java" index="4">
+<position info="not_deleted" x="502" y="5"/>
 </item>
-<item historyLabel="TempletParser.java" index="3">
-<position info="not_deleted" x="496" y="0"/>
+<item historyLabel="TestXmlBuilder.java" index="2">
+<position/>
 </item>
-<item historyLabel="TempletParser.java" index="3">
-<position info="not_deleted" x="358" y="0"/>
+<item historyLabel="XMLBuilder.java" index="4">
+<position info="not_deleted" x="472" y="0"/>
 </item>
-<item historyLabel="TempletParser.java" index="3">
-<position info="not_deleted" x="223" y="0"/>
+<item historyLabel="TestXmlBuilder.java" index="2">
+<position/>
 </item>
-<item historyLabel="People.xml" index="5"/>
-<item historyLabel="TestXmlBuilder.java" index="0">
-<position info="not_deleted" x="749" y="0"/>
+<item historyLabel="XMLBuilder.java" index="4">
+<position info="not_deleted" x="1462" y="0"/>
 </item>
-<item historyLabel="XMLBuilder.java" index="6">
-<position info="not_deleted" x="9432" y="0"/>
+<item historyLabel="TestXmlBuilder.java" index="2">
+<position info="not_deleted" x="1795" y="0"/>
 </item>
-<item historyLabel="XMLBuilder.java" index="6">
-<position info="not_deleted" x="3594" y="0"/>
+<item historyLabel="TestXmlBuilder.java" index="2">
+<position/>
 </item>
-<item historyLabel="XMLBuilder.java" index="6">
-<position info="not_deleted" x="10121" y="20"/>
+<item historyLabel="TestXmlBuilder.java" index="2">
+<position info="not_deleted" x="1570" y="0"/>
 </item>
-<item historyLabel="XMLBuilder.java" index="6">
-<position info="not_deleted" x="10555" y="0"/>
+<item historyLabel="XMLBuilder.java" index="4">
+<position info="not_deleted" x="2462" y="0"/>
 </item>
-<item historyLabel="XMLBuilder.java" index="6">
-<position info="not_deleted" x="12850" y="12"/>
+<item historyLabel="TestXmlBuilder.java" index="2">
+<position info="not_deleted" x="1704" y="0"/>
 </item>
-<item historyLabel="XMLBuilder.java" index="6">
-<position info="not_deleted" x="12915" y="0"/>
+<item historyLabel="XMLBuilder.java" index="4">
+<position info="not_deleted" x="1462" y="0"/>
 </item>
-<item historyLabel="XMLBuilder.java" index="6">
-<position info="not_deleted" x="14658" y="0"/>
+<item historyLabel="TestXmlBuilder.java" index="2">
+<position info="not_deleted" x="1700" y="0"/>
 </item>
-<item historyLabel="TempletParser.java" index="3">
-<position info="not_deleted" x="223" y="0"/>
+<item historyLabel="XMLBuilder.java" index="4">
+<position info="not_deleted" x="1462" y="0"/>
 </item>
-<item historyLabel="XMLBuilder.java" index="6">
-<position info="not_deleted" x="13516" y="0"/>
+<item historyLabel="XMLBuilder.java" index="4">
+<position info="not_deleted" x="1666" y="0"/>
 </item>
-<item historyLabel="TestXmlBuilder.java" index="0">
-<position info="not_deleted" x="1219" y="0"/>
+<item historyLabel="XMLBuilder.java" index="4">
+<position info="not_deleted" x="1650" y="7"/>
 </item>
-<item historyLabel="XMLBuilder.java" index="6">
-<position info="not_deleted" x="13251" y="0"/>
+<item historyLabel="XMLBuilder.java" index="4">
+<position info="not_deleted" x="1588" y="0"/>
 </item>
-<item historyLabel="People.xml" index="5"/>
-<item historyLabel="XMLBuilder.java" index="6">
-<position info="not_deleted" x="13251" y="0"/>
+<item historyLabel="XMLBuilder.java" index="4">
+<position info="not_deleted" x="1610" y="33"/>
 </item>
-<item historyLabel="XMLBuilder.java" index="6">
-<position info="not_deleted" x="10738" y="0"/>
+<item historyLabel="XMLBuilder.java" index="4">
+<position info="not_deleted" x="2852" y="0"/>
 </item>
-<item historyLabel="XMLBuilder.java" index="6">
-<position info="not_deleted" x="11063" y="19"/>
+<item historyLabel="XMLBuilder.java" index="4">
+<position info="not_deleted" x="2785" y="33"/>
 </item>
-<item historyLabel="XMLBuilder.java" index="6">
-<position info="not_deleted" x="1186" y="0"/>
+<item historyLabel="TestXmlBuilder.java" index="5">
+<position info="not_deleted" x="1546" y="0"/>
 </item>
-<item historyLabel="XMLBuilder.java" index="6">
-<position info="not_deleted" x="2664" y="14"/>
+<item historyLabel="XMLBuilder.java" index="4">
+<position info="not_deleted" x="2024" y="0"/>
 </item>
-<item historyLabel="XMLBuilder.java" index="6">
-<position info="not_deleted" x="3665" y="0"/>
+<item historyLabel="XMLBuilder.java" index="4">
+<position/>
 </item>
-<item historyLabel="XMLBuilder.java" index="6">
-<position info="not_deleted" x="5130" y="18"/>
+<item historyLabel="XMLBuilder.java" index="4">
+<position/>
 </item>
-<item historyLabel="XMLBuilder.java" index="6">
-<position info="not_deleted" x="5822" y="0"/>
+<item historyLabel="TestXmlBuilder.java" index="6">
+<position info="not_deleted" x="1546" y="0"/>
 </item>
-<item historyLabel="XMLBuilder.java" index="6">
-<position info="not_deleted" x="4062" y="0"/>
+<item historyLabel="XMLBuilder.java" index="4">
+<position info="not_deleted" x="2569" y="0"/>
 </item>
-<item historyLabel="TestXmlBuilder.java" index="0">
-<position info="not_deleted" x="1114" y="0"/>
+<item historyLabel="TestXmlBuilder.java" index="6">
+<position info="not_deleted" x="1546" y="0"/>
 </item>
-<item historyLabel="XMLBuilder.java" index="6">
-<position info="not_deleted" x="0" y="14549"/>
+<item historyLabel="XMLBuilder.java" index="4">
+<position info="not_deleted" x="2569" y="0"/>
 </item>
-<item active="true" historyLabel="TempletParser.java" index="3">
-<position info="not_deleted" x="223" y="0"/>
+<item historyLabel="XMLBuilder.java" index="4">
+<position info="not_deleted" x="2805" y="0"/>
+</item>
+<item historyLabel="XMLBuilder.java" index="4">
+<position info="not_deleted" x="2849" y="28"/>
+</item>
+<item historyLabel="XMLBuilder.java" index="4">
+<position info="not_deleted" x="2805" y="0"/>
+</item>
+<item historyLabel="XMLBuilder.java" index="4">
+<position info="not_deleted" x="2945" y="0"/>
+</item>
+<item historyLabel="XMLBuilder.java" index="4">
+<position info="not_deleted" x="2849" y="28"/>
+</item>
+<item historyLabel="XMLBuilder.java" index="4">
+<position info="not_deleted" x="2995" y="0"/>
+</item>
+<item historyLabel="People.xml" index="7"/>
+<item active="true" historyLabel="XMLBuilder.java" index="4">
+<position info="not_deleted" x="2995" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -701,12 +732,6 @@
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 <trimLayout>
-<trimArea IMemento.internal.id="16384">
-<trimItem IMemento.internal.id="left"/>
-</trimArea>
-<trimArea IMemento.internal.id="131072">
-<trimItem IMemento.internal.id="right"/>
-</trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
 <trimItem IMemento.internal.id="org.eclipse.mylyn.tasks.ui.trim.container"/>
@@ -715,28 +740,27 @@
 <trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
 <trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
-<trimItem IMemento.internal.id="bottom"/>
 </trimArea>
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="People.xml" tooltip="xmlbuilder/src/test/People.xml">
+<persistable path="/xmlbuilder/src/test/People.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="XMLBuilder.java" tooltip="xmlbuilder/src/cn/xml/XMLBuilder.java">
+<persistable path="/xmlbuilder/src/cn/xml/XMLBuilder.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TestXmlBuilder.java" tooltip="xmlbuilder/src/test/TestXmlBuilder.java">
+<persistable path="/xmlbuilder/src/test/TestXmlBuilder.java"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="People.java" tooltip="xmlbuilder/src/test/People.java">
 <persistable path="/xmlbuilder/src/test/People.java"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.systemInPlaceEditor" name="XMLBuilder使用手册.docx" tooltip="xmlbuilder/doc/XMLBuilder使用手册.docx">
 <persistable path="/xmlbuilder/doc/XMLBuilder使用手册.docx"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="People.xml" tooltip="xmlbuilder/src/test/People.xml">
-<persistable path="/xmlbuilder/src/test/People.xml"/>
-</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="China.xml" tooltip="xmlbuilder/src/test/China.xml">
 <persistable path="/xmlbuilder/src/test/China.xml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TestXmlBuilder.java" tooltip="xmlbuilder/src/test/TestXmlBuilder.java">
-<persistable path="/xmlbuilder/src/test/TestXmlBuilder.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="XMLBuilder.java" tooltip="xmlbuilder/src/cn/xml/XMLBuilder.java">
-<persistable path="/xmlbuilder/src/cn/xml/XMLBuilder.java"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TempletParser.java" tooltip="xmlbuilder/src/cn/xml/TempletParser.java">
 <persistable path="/xmlbuilder/src/cn/xml/TempletParser.java"/>

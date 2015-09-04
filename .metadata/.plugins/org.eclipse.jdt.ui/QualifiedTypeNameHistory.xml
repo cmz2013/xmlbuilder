@@ -37,4 +37,5 @@
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="test.Address"/>
 <fullyQualifiedTypeName name="cn.xml.TempletException"/>
+<fullyQualifiedTypeName name="java.nio.charset.Charset"/>
 </qualifiedTypeNameHistroy>

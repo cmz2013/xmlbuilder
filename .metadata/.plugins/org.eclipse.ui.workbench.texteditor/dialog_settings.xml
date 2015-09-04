@@ -13,18 +13,19 @@
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="" key="selection"/>
+		<item value="Encoding" key="selection"/>
 		<list key="findhistory">
+			<item value="encoding"/>
+			<item value="UTF-8"/>
 			<item value="NoSuchFieldException"/>
 			<item value="getAttrValue"/>
 			<item value="PREFIX_MEMOBJECT"/>
 			<item value="parseObjectElement"/>
 			<item value="ObjectAttributeResult"/>
 			<item value="xmlEncoding"/>
-			<item value="\t\n"/>
-			<item value="addElement"/>
 		</list>
 		<list key="replacehistory">
+			<item value="GBK"/>
 			<item value="parser"/>
 			<item value=""/>
 			<item value="memobject"/>
